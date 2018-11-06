@@ -278,7 +278,7 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
     </StyledHeightContainer>
     <CallToAction>
       <h3>
-        Get in touch to discuss <GatsbyLink to="/contacts">your project</GatsbyLink>
+        Get in touch to discuss <strong>your project</strong>
       </h3>
     </CallToAction>
   </Page>

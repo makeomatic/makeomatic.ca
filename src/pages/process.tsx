@@ -11,7 +11,7 @@ import { ReactComponent as MarketIcon } from '../assets/svg/process_icon_market.
 import { CallToAction } from '../components/CallToAction'
 import { CardContents } from '../components/CardContents'
 import { StyledSideBlock } from '../components/SideBlock'
-import GatsbyLink from 'gatsby-link'
+// import GatsbyLink from 'gatsby-link'
 import { BackgroundImage } from '../components/BackgroundImage'
 import { getEmSize } from '../styles/mixins'
 import { ResponsiveBackgroundImage } from '../components/ResponsiveBackgroundImage'
@@ -307,8 +307,7 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
     <CallToActionGeometryContainer>
       <CallToActionGeometry>
         <h2>
-          Read <GatsbyLink to="/cappasity">the Cappasity</GatsbyLink> project overview to see our
-          process in action
+          Read <strong>the Cappasity</strong> project overview to see our process in action
         </h2>
       </CallToActionGeometry>
     </CallToActionGeometryContainer>

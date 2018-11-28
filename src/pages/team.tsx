@@ -29,30 +29,8 @@ const TeamSideBlock = styled(StyledSideBlock)`
 
 const DividerGeometryContainer = styled.div`
   position: relative;
-  background: #202020;
   width: 100%;
   z-index: 0;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    height: 11.875rem;
-    background-color: #646464;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 8rem;
-    right: 0;
-    width: 50%;
-    height: 13.75rem;
-    background-color: rgba(255, 255, 255, 0.15);
-  }
 `
 
 const DividerGeometry = styled(Divider)`
@@ -125,6 +103,8 @@ interface TeamPageProps {
     poyarkovImageMd: SharpResolutionsImage
     bratchikovImage: SharpResolutionsImage
     bratchikovImageMd: SharpResolutionsImage
+    sorokinImage: SharpResolutionsImage
+    sorokinImageMd: SharpResolutionsImage
     kubarevImage: SharpResolutionsImage
     kubarevImageMd: SharpResolutionsImage
     ivanovaImage: SharpResolutionsImage
@@ -164,8 +144,8 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>CTO / Mad Scientist</p>
           <h3>Vitaly Aminev</h3>
+          <p>CTO / Mad Scientist</p>
         </TeamSideBlock>
       </TeamCard>
       <TeamCard>
@@ -176,8 +156,8 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>CEO / Mobile Expert</p>
           <h3>Aleksandr Kremenets</h3>
+          <p>CEO / Mobile Expert</p>
         </TeamSideBlock>
       </TeamCard>
     </StyledHeightContainer>
@@ -190,8 +170,8 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>Head of Design</p>
           <h3>Anna Amineva</h3>
+          <p>Head of Design</p>
         </TeamSideBlock>
       </TeamCard>
       <CardNoImage
@@ -215,8 +195,8 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>Team Master</p>
           <h3>Evgeny Poyarkov</h3>
+          <p>Team Master</p>
         </TeamSideBlock>
       </TeamCard>
       <TeamCard>
@@ -227,8 +207,8 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>Frontend Hero</p>
           <h3>Aleksandr Bratchikov</h3>
+          <p>Frontend Hero</p>
         </TeamSideBlock>
       </TeamCard>
     </StyledHeightContainer>
@@ -239,14 +219,14 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
       />
       <TeamCard>
         <ResponsiveBackgroundImage
-          imageLg={data.vaminevImage}
-          imageMd={data.vaminevImageMd}
+          imageLg={data.sorokinImage}
+          imageMd={data.sorokinImageMd}
           alignLg="center"
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>Full-Stack Pro</p>
           <h3>Aleksandr Sorokin</h3>
+          <p>Full-Stack Pro</p>
         </TeamSideBlock>
       </TeamCard>
     </StyledHeightContainer>
@@ -264,15 +244,15 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <p>Full-Stack Whiz</p>
           <h3>Aleksey Khoroshev</h3>
+          <p>Full-Stack Whiz</p>
         </TeamSideBlock>
       </TeamCard>
       <TeamCard>
         <ResponsiveBackgroundImage imageLg={data.ivanovaImage} imageMd={data.ivanovaImageMd} />
         <TeamSideBlock>
-          <p>Frontend Creator</p>
           <h3>Olga Ivanova</h3>
+          <p>Frontend Creator</p>
         </TeamSideBlock>
       </TeamCard>
     </StyledHeightContainer>
@@ -293,12 +273,12 @@ export const query = graphql`
     }
 
     vaminevImage: imageSharp(id: { regex: "/team_vaminev.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
+      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }
-    vaminevImageMd: imageSharp(id: { regex: "/team_vaminev_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
+    vaminevImageMd: imageSharp(id: { regex: "/team_vaminev.jpg/" }) {
+      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }
@@ -308,30 +288,41 @@ export const query = graphql`
         ...GatsbyImageSharpResolutions
       }
     }
-    kremenetsImageMd: imageSharp(id: { regex: "/team_kremenets_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
+    kremenetsImageMd: imageSharp(id: { regex: "/team_kremenets.jpg/" }) {
+      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }
 
     annaImage: imageSharp(id: { regex: "/team_anna.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
+      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }
-    annaImageMd: imageSharp(id: { regex: "/team_anna_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
+    annaImageMd: imageSharp(id: { regex: "/team_anna.jpg/" }) {
+      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }
 
     poyarkovImage: imageSharp(id: { regex: "/team_poyarkov.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
+      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }
-    poyarkovImageMd: imageSharp(id: { regex: "/team_poyarkov_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
+    poyarkovImageMd: imageSharp(id: { regex: "/team_poyarkov.jpg/" }) {
+      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
+        ...GatsbyImageSharpResolutions
+      }
+    }
+
+    sorokinImage: imageSharp(id: { regex: "/team_sorokin.jpg/" }) {
+      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
+        ...GatsbyImageSharpResolutions
+      }
+    }
+    sorokinImageMd: imageSharp(id: { regex: "/team_sorokin.jpg/" }) {
+      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
         ...GatsbyImageSharpResolutions
       }
     }

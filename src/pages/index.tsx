@@ -44,7 +44,7 @@ const SubHeader = styled.p`
   `};
 `
 const Desc = styled.div`
-  margin-top: 2.5rem;
+  margin-top: 0.25rem;
   font-size: 1.125rem;
   color: ${p => p.theme.colors.gray.desc};
 
@@ -64,9 +64,6 @@ const BlackTransparentSideBlock = styled(TransparentSideBlock)`
 const GeometryDividerContainer = styled.div`
   position: relative;
   width: 100%;
-  background: #202020;
-  background-size: 100%;
-  background: linear-gradient(90deg, #202020 0%, #202020 50%, #414141 50%, #414141 100%);
 `
 
 const GeometryDivider = styled(Divider)`

@@ -4,10 +4,6 @@ import { Page } from '../components/Page'
 import { Intro } from '../components/Intro'
 import { Divider } from '../components/Divider'
 import { HeightContainer } from '../components/HeightContainer'
-import { ReactComponent as IdeaIcon } from '../assets/svg/process_icon_idea.svg'
-import { ReactComponent as VisualIcon } from '../assets/svg/process_icon_visual.svg'
-import { ReactComponent as ProductIcon } from '../assets/svg/process_icon_product.svg'
-import { ReactComponent as MarketIcon } from '../assets/svg/process_icon_market.svg'
 import { CallToAction } from '../components/CallToAction'
 import { CardContents } from '../components/CardContents'
 import { StyledSideBlock } from '../components/SideBlock'
@@ -63,24 +59,6 @@ const RightSideBlock = styled(LeftSideBlock)`
 
 const RightSideBlockGeometryContainer = styled.div`
   position: relative;
-  background: #000;
-  z-index: -3;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    height: 7.5rem;
-    right: 0;
-    width: 50%;
-    background-color: #4e4e4e;
-    z-index: -2;
-
-    ${p => p.theme.media.md`
-      display: none;
-    `};
-  }
 `
 
 const RightSideBlockGeometry = styled(RightSideBlock)`
@@ -102,11 +80,7 @@ const RightSideBlockGeometry = styled(RightSideBlock)`
   }
 `
 
-const CallToActionGeometryContainer = styled.div`
-  background: #202020;
-  background-size: 100%;
-  background: linear-gradient(90deg, #202020 0%, #202020 50%, #4e4e4e 50%, #4e4e4e 100%);
-`
+const CallToActionGeometryContainer = styled.div``
 
 const CallToActionGeometry = styled(CallToAction)`
   position: relative;
@@ -150,6 +124,8 @@ const StyledBackgroundImage = styled(ResponsiveBackgroundImage)`
 
 const BlockHeader = styled.div`
   ${p => p.theme.media.md`
+    margin-top: 2rem;
+  
     svg {
       float: left;
       margin-right: 1.5rem;
@@ -209,7 +185,6 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
         />
         <LeftSideBlock>
           <BlockHeader>
-            <IdeaIcon />
             <h3>
               Shape your
               <Br />
@@ -234,7 +209,6 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
         />
         <RightSideBlock>
           <BlockHeader>
-            <VisualIcon />
             <h3>
               Think
               <Br />
@@ -261,7 +235,6 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
         />
         <LeftSideBlock>
           <BlockHeader>
-            <ProductIcon />
             <h3>
               Architect
               <Br />
@@ -288,7 +261,6 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
           />
           <RightSideBlockGeometry>
             <BlockHeader>
-              <MarketIcon />
               <h3>
                 Validate to
                 <Br />

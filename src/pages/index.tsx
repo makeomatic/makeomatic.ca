@@ -410,7 +410,7 @@ export const query = graphql`
       }
     }
     section6ImageMd: imageSharp(id: { regex: "/work_artune_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
+      resolutions(width: 960, height: 520, quality: 90) {
         ...GatsbyImageSharpResolutions
       }
     }

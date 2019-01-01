@@ -25,6 +25,10 @@ const TeamSideBlock = styled(StyledSideBlock)`
   h3 {
     font-size: 2.125rem;
   }
+
+  h3 + p {
+    margin-top: 2px;
+  }
 `
 
 const DividerGeometryContainer = styled.div`
@@ -244,8 +248,8 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
           alignMd="center"
         />
         <TeamSideBlock>
-          <h3>Aleksey Khoroshev</h3>
-          <p>Full-Stack Whiz</p>
+          <h3>Alexey Kubarev</h3>
+          <p>Mobile Expert</p>
         </TeamSideBlock>
       </TeamCard>
       <TeamCard>

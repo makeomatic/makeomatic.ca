@@ -14,6 +14,6 @@ const InnerFooter = styled(Container)`
 
 export const Footer: React.SFC<{}> = () => (
   <footer>
-    <InnerFooter>{'© 2012–2018, Makeomatic'}</InnerFooter>
+    <InnerFooter>{'© 2012–2019, Makeomatic'}</InnerFooter>
   </footer>
 )

@@ -166,7 +166,7 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
       header="Efficiency Build In-House"
       text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
     >
-      <BackgroundImage image={data.introImage} align="center" />
+      <BackgroundImage image={data.introImage} align="right" />
     </Intro>
     <Divider>
       <h2>A True Development-Led Process</h2>
@@ -181,7 +181,8 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
         <StyledBackgroundImage
           imageLg={data.section1Image}
           imageMd={data.section1ImageMd}
-          alignMd="center"
+          alignLg="right"
+          alignMd="right"
         />
         <LeftSideBlock>
           <BlockHeader>
@@ -231,6 +232,7 @@ const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
         <StyledBackgroundImage
           imageLg={data.section3Image}
           imageMd={data.section3ImageMd}
+          alignLg="right"
           alignMd="center"
         />
         <LeftSideBlock>
@@ -298,7 +300,7 @@ export const query = graphql`
         ...GatsbyImageSharpResolutions
       }
     }
-    section1ImageMd: imageSharp(id: { regex: "/process_idea.jpg/" }) {
+    section1ImageMd: imageSharp(id: { regex: "/process_idea_md.jpg/" }) {
       resolutions(width: 960, height: 520, quality: 85) {
         ...GatsbyImageSharpResolutions
       }

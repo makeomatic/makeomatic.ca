@@ -128,7 +128,7 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
       }
       text="Makeomatic is second to none in solving problems that require the highest level of technical expertise."
     >
-      <BackgroundImage image={data.introImage} align="center" />
+      <BackgroundImage image={data.introImage} align="right" />
     </StyledIntro>
     <DividerGeometryContainer>
       <DividerGeometry>
@@ -170,7 +170,7 @@ const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
         <ResponsiveBackgroundImage
           imageLg={data.annaImage}
           imageMd={data.annaImageMd}
-          alignLg="right"
+          alignLg="center"
           alignMd="center"
         />
         <TeamSideBlock>

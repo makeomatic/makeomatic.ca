@@ -1,10 +1,9 @@
 import styledNormalize from 'styled-normalize'
-import { injectGlobal } from '../styles/styled-components'
-import { dimensions, fonts, colors } from './variables'
-import { onEvent } from './mixins'
+import { createGlobalStyle } from '../styles/styled-components'
+import { dimensions, fonts, colors } from '../styles/variables'
+import { onEvent } from '../styles/mixins'
 
-// tslint:disable-next-line:no-unused-expression
-injectGlobal`
+export const Normalize = createGlobalStyle`
   ${styledNormalize}
 
   html {

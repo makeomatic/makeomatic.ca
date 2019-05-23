@@ -2,14 +2,13 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from '../styles/styled-components'
 
-import '../styles/normalize'
-
 import { Header } from '../components/Header'
 import { LayoutRoot } from '../components/LayoutRoot'
 import { LayoutMain } from '../components/LayoutMain'
 import { theme } from '../styles/theme'
 import { Footer } from '../components/Footer'
 import { Contacts } from '../components/Contacts'
+import { Normalize } from '../components/Normalize'
 
 if (typeof window !== 'undefined') {
   require('webfontloader').load({
@@ -45,6 +44,7 @@ const IndexLayout: React.SFC<WrapperProps> = ({ children, data }) => (
       <LayoutMain>{children()}</LayoutMain>
       <Contacts />
       <Footer />
+      <Normalize />
     </LayoutRoot>
   </ThemeProvider>
 )

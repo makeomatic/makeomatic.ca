@@ -12,7 +12,7 @@ export const media = {
       ${css(styles, ...interpolations)};
     }
   `,
-  md: <P = {}>(
+  md: <P extends object>(
     styles: TemplateStringsArray,
     ...interpolations: (SimpleInterpolation | Interpolation<ThemedStyledProps<P, ThemeInterface>>)[]
   ) => css`
@@ -20,7 +20,7 @@ export const media = {
       ${css(styles, ...interpolations)};
     }
   `,
-  lg: <P = {}>(
+  lg: <P extends object>(
     styles: TemplateStringsArray,
     ...interpolations: (SimpleInterpolation | Interpolation<ThemedStyledProps<P, ThemeInterface>>)[]
   ) => css`

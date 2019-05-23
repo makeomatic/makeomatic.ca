@@ -4,11 +4,11 @@ import { ThemeInterface } from './theme'
 const {
   default: styled,
   css,
-  injectGlobal,
+  createGlobalStyle,
   keyframes,
   withTheme,
   ThemeProvider,
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeInterface>
 
-export { css, injectGlobal, keyframes, withTheme, ThemeProvider }
+export { css, createGlobalStyle, keyframes, withTheme, ThemeProvider }
 export default styled

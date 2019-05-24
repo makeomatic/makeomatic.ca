@@ -1,5 +1,7 @@
 import * as React from 'react'
 import styled from '../styles/styled-components'
+import { graphql } from 'gatsby'
+import { Layout } from '../components/Layout'
 import { Page } from '../components/Page'
 import { Intro } from '../components/Intro'
 import { Divider } from '../components/Divider'
@@ -7,7 +9,6 @@ import { HeightContainer } from '../components/HeightContainer'
 import { CallToAction } from '../components/CallToAction'
 import { CardContents } from '../components/CardContents'
 import { StyledSideBlock } from '../components/SideBlock'
-// import GatsbyLink from 'gatsby-link'
 import { BackgroundImage } from '../components/BackgroundImage'
 import { getEmSize } from '../styles/mixins'
 import { ResponsiveBackgroundImage } from '../components/ResponsiveBackgroundImage'
@@ -148,195 +149,180 @@ const Br = styled.span`
 
 interface ProcessPageProps {
   data: {
-    introImage: SharpResolutionsImage
-    section1Image: SharpResolutionsImage
-    section1ImageMd: SharpResolutionsImage
-    section2Image: SharpResolutionsImage
-    section2ImageMd: SharpResolutionsImage
-    section3Image: SharpResolutionsImage
-    section3ImageMd: SharpResolutionsImage
-    section4Image: SharpResolutionsImage
-    section4ImageMd: SharpResolutionsImage
+    introImage: SharpFixedImage
+    section1Image: SharpFixedImage
+    section1ImageMd: SharpFixedImage
+    section2Image: SharpFixedImage
+    section2ImageMd: SharpFixedImage
+    section3Image: SharpFixedImage
+    section3ImageMd: SharpFixedImage
+    section4Image: SharpFixedImage
+    section4ImageMd: SharpFixedImage
   }
 }
 
-const ProcessPage: React.SFC<ProcessPageProps> = ({ data }) => (
-  <Page>
-    <Intro
-      header="Efficiency Build In-House"
-      text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
-    >
-      <BackgroundImage image={data.introImage} align="right" />
-    </Intro>
-    <Divider>
-      <h2>A True Development-Led Process</h2>
-      <p>
-        Makeomatic boasts a cohesive in-house team of engineers, designers and project managers that
-        has perfected the art of product iteration by decreasing the gap between product development
-        and market validation.
-      </p>
-    </Divider>
-    <StyledHeightContainer>
-      <CardContents>
-        <StyledBackgroundImage
-          imageLg={data.section1Image}
-          imageMd={data.section1ImageMd}
-          alignLg="right"
-          alignMd="right"
-        />
-        <LeftSideBlock>
-          <BlockHeader>
-            <h3>
-              Shape your
-              <Br />
-              idea
-            </h3>
-          </BlockHeader>
-          <p>
-            With dozens of shipped products, we are able to quickly understand your problem and
-            conduct necessary research, observe the current approaches out there, and define user
-            needs that will inform the project’s mind map as well as help us break it down into
-            specific user stories and detect weaknesses right at the beginning.
-          </p>
-        </LeftSideBlock>
-      </CardContents>
-    </StyledHeightContainer>
-    <StyledHeightContainer>
-      <CardContents>
-        <StyledBackgroundImage
-          imageLg={data.section2Image}
-          imageMd={data.section2ImageMd}
-          alignMd="center"
-        />
-        <RightSideBlock>
-          <BlockHeader>
-            <h3>
-              Think
-              <Br />
-              through
-              <Br />
-              visualization
-            </h3>
-          </BlockHeader>
-          <p>
-            Once we have a solid hypothesis in place, we start generating ideas and pick those that
-            have the highest potential for fulfilling users’ needs. Based on these ideas, we sketch
-            out the entire user experience and make visual design drafts needed to create a
-            prototype.
-          </p>
-        </RightSideBlock>
-      </CardContents>
-    </StyledHeightContainer>
-    <StyledHeightContainer>
-      <CardContents>
-        <StyledBackgroundImage
-          imageLg={data.section3Image}
-          imageMd={data.section3ImageMd}
-          alignLg="right"
-          alignMd="center"
-        />
-        <LeftSideBlock>
-          <BlockHeader>
-            <h3>
-              Architect
-              <Br />
-              your vision
-            </h3>
-          </BlockHeader>
-          <p>
-            As soon as the design feels right, we create a technical product description, which lays
-            out all high-level interactions, and start building out the technical foundation to
-            support your product. Based on our agile process, we get to MVP as fast as possible and
-            ship new iterations every two weeks on average, adjusting our course with inputs from
-            stakeholders
-          </p>
-        </LeftSideBlock>
-      </CardContents>
-    </StyledHeightContainer>
-    <RightSideBlockGeometryContainer>
+const ProcessPage: React.FC<ProcessPageProps> = ({ data }) => (
+  <Layout>
+    <Page>
+      <Intro
+        header="Efficiency Build In-House"
+        text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
+      >
+        <BackgroundImage image={data.introImage} align="right" />
+      </Intro>
+      <Divider>
+        <h2>A True Development-Led Process</h2>
+        <p>
+          Makeomatic boasts a cohesive in-house team of engineers, designers and project managers
+          that has perfected the art of product iteration by decreasing the gap between product
+          development and market validation.
+        </p>
+      </Divider>
       <StyledHeightContainer>
         <CardContents>
           <StyledBackgroundImage
-            imageLg={data.section4Image}
-            imageMd={data.section4ImageMd}
-            alignMd="center"
+            imageLg={data.section1Image}
+            imageMd={data.section1ImageMd}
+            alignLg="right"
+            alignMd="right"
           />
-          <RightSideBlockGeometry>
+          <LeftSideBlock>
             <BlockHeader>
               <h3>
-                Validate to
+                Shape your
                 <Br />
-                keep going
+                idea
               </h3>
             </BlockHeader>
             <p>
-              In parallel with agile development cycles, all shipped work is beta tested in its
-              intended market, guiding us to making necessary tweaks with minimum financial risks
-              and time invested.
+              With dozens of shipped products, we are able to quickly understand your problem and
+              conduct necessary research, observe the current approaches out there, and define user
+              needs that will inform the project’s mind map as well as help us break it down into
+              specific user stories and detect weaknesses right at the beginning.
             </p>
-          </RightSideBlockGeometry>
+          </LeftSideBlock>
         </CardContents>
       </StyledHeightContainer>
-    </RightSideBlockGeometryContainer>
-    <CallToActionGeometryContainer>
-      <CallToActionGeometry>
-        <h2>
-          Read <strong>the Cappasity</strong> project overview to see our process in action
-        </h2>
-      </CallToActionGeometry>
-    </CallToActionGeometryContainer>
-  </Page>
+      <StyledHeightContainer>
+        <CardContents>
+          <StyledBackgroundImage
+            imageLg={data.section2Image}
+            imageMd={data.section2ImageMd}
+            alignMd="center"
+          />
+          <RightSideBlock>
+            <BlockHeader>
+              <h3>
+                Think
+                <Br />
+                through
+                <Br />
+                visualization
+              </h3>
+            </BlockHeader>
+            <p>
+              Once we have a solid hypothesis in place, we start generating ideas and pick those
+              that have the highest potential for fulfilling users’ needs. Based on these ideas, we
+              sketch out the entire user experience and make visual design drafts needed to create a
+              prototype.
+            </p>
+          </RightSideBlock>
+        </CardContents>
+      </StyledHeightContainer>
+      <StyledHeightContainer>
+        <CardContents>
+          <StyledBackgroundImage
+            imageLg={data.section3Image}
+            imageMd={data.section3ImageMd}
+            alignLg="right"
+            alignMd="center"
+          />
+          <LeftSideBlock>
+            <BlockHeader>
+              <h3>
+                Architect
+                <Br />
+                your vision
+              </h3>
+            </BlockHeader>
+            <p>
+              As soon as the design feels right, we create a technical product description, which
+              lays out all high-level interactions, and start building out the technical foundation
+              to support your product. Based on our agile process, we get to MVP as fast as possible
+              and ship new iterations every two weeks on average, adjusting our course with inputs
+              from stakeholders
+            </p>
+          </LeftSideBlock>
+        </CardContents>
+      </StyledHeightContainer>
+      <RightSideBlockGeometryContainer>
+        <StyledHeightContainer>
+          <CardContents>
+            <StyledBackgroundImage
+              imageLg={data.section4Image}
+              imageMd={data.section4ImageMd}
+              alignMd="center"
+            />
+            <RightSideBlockGeometry>
+              <BlockHeader>
+                <h3>
+                  Validate to
+                  <Br />
+                  keep going
+                </h3>
+              </BlockHeader>
+              <p>
+                In parallel with agile development cycles, all shipped work is beta tested in its
+                intended market, guiding us to making necessary tweaks with minimum financial risks
+                and time invested.
+              </p>
+            </RightSideBlockGeometry>
+          </CardContents>
+        </StyledHeightContainer>
+      </RightSideBlockGeometryContainer>
+      <CallToActionGeometryContainer>
+        <CallToActionGeometry>
+          <h2>
+            Read <strong>the Cappasity</strong> project overview to see our process in action
+          </h2>
+        </CallToActionGeometry>
+      </CallToActionGeometryContainer>
+    </Page>
+  </Layout>
 )
 
 export const query = graphql`
   query ProcessData {
-    introImage: imageSharp(id: { regex: "/process_intro.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
-    }
-    section1Image: imageSharp(id: { regex: "/process_idea.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
-    }
-    section1ImageMd: imageSharp(id: { regex: "/process_idea_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    introImage: file(relativePath: { eq: "process_intro.jpg" }) {
+      ...basicImage
     }
 
-    section2Image: imageSharp(id: { regex: "/process_visual.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section1Image: file(relativePath: { eq: "process_idea.jpg" }) {
+      ...basicImage
     }
-    section2ImageMd: imageSharp(id: { regex: "/process_visual.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section1ImageMd: file(relativePath: { eq: "process_idea_md.jpg" }) {
+      ...basicMdImage
     }
 
-    section3Image: imageSharp(id: { regex: "/process_product.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section2Image: file(relativePath: { eq: "process_visual.jpg" }) {
+      ...basicImage
     }
-    section3ImageMd: imageSharp(id: { regex: "/process_product_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section2ImageMd: file(relativePath: { eq: "process_visual.jpg" }) {
+      ...basicMdImage
     }
 
-    section4Image: imageSharp(id: { regex: "/process_market.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section3Image: file(relativePath: { eq: "process_product.jpg" }) {
+      ...basicImage
     }
-    section4ImageMd: imageSharp(id: { regex: "/process_market.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section3ImageMd: file(relativePath: { eq: "process_product_md.jpg" }) {
+      ...basicMdImage
+    }
+
+    section4Image: file(relativePath: { eq: "process_market.jpg" }) {
+      ...basicImage
+    }
+    section4ImageMd: file(relativePath: { eq: "process_market.jpg" }) {
+      ...basicMdImage
     }
   }
 `

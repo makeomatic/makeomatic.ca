@@ -40,7 +40,7 @@ interface IntroProps {
   text: React.ReactNode
 }
 
-export const Intro: React.SFC<IntroProps> = ({ className, children, header, text }) => (
+export const Intro: React.FC<IntroProps> = ({ className, children, header, text }) => (
   <IntroContainer>
     {children}
     <Contents className={className}>

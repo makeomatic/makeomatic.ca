@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Layout } from '../components/Layout'
 import { Page } from '../components/Page'
 import { Intro } from '../components/Intro'
 import { Divider } from '../components/Divider'
@@ -8,7 +9,7 @@ import { TeamCard } from '../components/TeamCard'
 import { CallToAction } from '../components/CallToAction'
 
 import styled from '../styles/styled-components'
-import GatsbyLink from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import { StyledSideBlock } from '../components/SideBlock'
 import { BackgroundImage } from '../components/BackgroundImage'
 import { getEmSize } from '../styles/mixins'
@@ -96,272 +97,240 @@ const StyledReverseHeightContainer = styled(StyledHeightContainer)`
 
 interface TeamPageProps {
   data: {
-    introImage: SharpResolutionsImage
-    vaminevImage: SharpResolutionsImage
-    vaminevImageMd: SharpResolutionsImage
-    kremenetsImage: SharpResolutionsImage
-    kremenetsImageMd: SharpResolutionsImage
-    annaImage: SharpResolutionsImage
-    annaImageMd: SharpResolutionsImage
-    poyarkovImage: SharpResolutionsImage
-    poyarkovImageMd: SharpResolutionsImage
-    bratchikovImage: SharpResolutionsImage
-    bratchikovImageMd: SharpResolutionsImage
-    sorokinImage: SharpResolutionsImage
-    sorokinImageMd: SharpResolutionsImage
-    kubarevImage: SharpResolutionsImage
-    kubarevImageMd: SharpResolutionsImage
-    ivanovaImage: SharpResolutionsImage
-    ivanovaImageMd: SharpResolutionsImage
+    introImage: SharpFixedImage
+    vaminevImage: SharpFixedImage
+    vaminevImageMd: SharpFixedImage
+    kremenetsImage: SharpFixedImage
+    kremenetsImageMd: SharpFixedImage
+    annaImage: SharpFixedImage
+    annaImageMd: SharpFixedImage
+    poyarkovImage: SharpFixedImage
+    poyarkovImageMd: SharpFixedImage
+    bratchikovImage: SharpFixedImage
+    bratchikovImageMd: SharpFixedImage
+    sorokinImage: SharpFixedImage
+    sorokinImageMd: SharpFixedImage
+    kubarevImage: SharpFixedImage
+    kubarevImageMd: SharpFixedImage
+    ivanovaImage: SharpFixedImage
+    ivanovaImageMd: SharpFixedImage
   }
 }
 
-const TeamPage: React.SFC<TeamPageProps> = ({ data }) => (
-  <Page>
-    <StyledIntro
-      header={
-        <span>
-          Untangling Complexity
+const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
+  <Layout>
+    <Page>
+      <StyledIntro
+        header={
+          <span>
+            Untangling Complexity
+            <br />
+            Since 2012
+          </span>
+        }
+        text="Makeomatic is second to none in solving problems that require the highest level of technical expertise."
+      >
+        <BackgroundImage image={data.introImage} align="right" />
+      </StyledIntro>
+      <DividerGeometryContainer>
+        <DividerGeometry>
+          <h2>Expert Production Crew</h2>
+          <p>
+            Having delivered dozens of multilayered projects for a variety of industries worldwide,
+            we are a tight-knit team ready to execute your idea with speed and precision.
+          </p>
+        </DividerGeometry>
+      </DividerGeometryContainer>
+      <StyledHeightContainer>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.vaminevImage}
+            imageMd={data.vaminevImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Vitaly Aminev</h3>
+            <p>CTO / Mad Scientist</p>
+          </TeamSideBlock>
+        </TeamCard>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.kremenetsImage}
+            imageMd={data.kremenetsImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Aleksandr Kremenets</h3>
+            <p>CEO / Mobile Expert</p>
+          </TeamSideBlock>
+        </TeamCard>
+      </StyledHeightContainer>
+      <StyledReverseHeightContainer>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.annaImage}
+            imageMd={data.annaImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Anna Amineva</h3>
+            <p>Head of Design</p>
+          </TeamSideBlock>
+        </TeamCard>
+        <CardNoImage
+          header="Design"
+          text="From intricate UX trees to visual identity, we keep our designs intuitive for users and ready for development right from the get-go."
+        />
+      </StyledReverseHeightContainer>
+      <CallToAction>
+        <h2>
+          Look through all projects
           <br />
-          Since 2012
-        </span>
-      }
-      text="Makeomatic is second to none in solving problems that require the highest level of technical expertise."
-    >
-      <BackgroundImage image={data.introImage} align="right" />
-    </StyledIntro>
-    <DividerGeometryContainer>
-      <DividerGeometry>
-        <h2>Expert Production Crew</h2>
-        <p>
-          Having delivered dozens of multilayered projects for a variety of industries worldwide, we
-          are a tight-knit team ready to execute your idea with speed and precision.
-        </p>
-      </DividerGeometry>
-    </DividerGeometryContainer>
-    <StyledHeightContainer>
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.vaminevImage}
-          imageMd={data.vaminevImageMd}
-          alignLg="center"
-          alignMd="center"
+          to see the breadth of <Link to="/">our work</Link>
+        </h2>
+      </CallToAction>
+      <StyledHeightContainer>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.poyarkovImage}
+            imageMd={data.poyarkovImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Evgeny Poyarkov</h3>
+            <p>Team Master</p>
+          </TeamSideBlock>
+        </TeamCard>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.bratchikovImage}
+            imageMd={data.bratchikovImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Aleksandr Bratchikov</h3>
+            <p>Frontend Hero</p>
+          </TeamSideBlock>
+        </TeamCard>
+      </StyledHeightContainer>
+      <StyledHeightContainer>
+        <CardNoImage
+          header="Development"
+          text="We specialize on projects that are plain too hard for most creative agencies to crack. Our experience in cutting-edge tech stacks, such as microservices, and their implementation is what differentiates us from the rest."
         />
-        <TeamSideBlock>
-          <h3>Vitaly Aminev</h3>
-          <p>CTO / Mad Scientist</p>
-        </TeamSideBlock>
-      </TeamCard>
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.kremenetsImage}
-          imageMd={data.kremenetsImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TeamSideBlock>
-          <h3>Aleksandr Kremenets</h3>
-          <p>CEO / Mobile Expert</p>
-        </TeamSideBlock>
-      </TeamCard>
-    </StyledHeightContainer>
-    <StyledReverseHeightContainer>
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.annaImage}
-          imageMd={data.annaImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TeamSideBlock>
-          <h3>Anna Amineva</h3>
-          <p>Head of Design</p>
-        </TeamSideBlock>
-      </TeamCard>
-      <CardNoImage
-        header="Design"
-        text="From intricate UX trees to visual identity, we keep our designs intuitive for users and ready for development right from the get-go."
-      />
-    </StyledReverseHeightContainer>
-    <CallToAction>
-      <h2>
-        Look through all projects
-        <br />
-        to see the breadth of <GatsbyLink to="/">our work</GatsbyLink>
-      </h2>
-    </CallToAction>
-    <StyledHeightContainer>
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.poyarkovImage}
-          imageMd={data.poyarkovImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TeamSideBlock>
-          <h3>Evgeny Poyarkov</h3>
-          <p>Team Master</p>
-        </TeamSideBlock>
-      </TeamCard>
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.bratchikovImage}
-          imageMd={data.bratchikovImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TeamSideBlock>
-          <h3>Aleksandr Bratchikov</h3>
-          <p>Frontend Hero</p>
-        </TeamSideBlock>
-      </TeamCard>
-    </StyledHeightContainer>
-    <StyledHeightContainer>
-      <CardNoImage
-        header="Development"
-        text="We specialize on projects that are plain too hard for most creative agencies to crack. Our experience in cutting-edge tech stacks, such as microservices, and their implementation is what differentiates us from the rest."
-      />
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.sorokinImage}
-          imageMd={data.sorokinImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TeamSideBlock>
-          <h3>Aleksandr Sorokin</h3>
-          <p>Full-Stack Pro</p>
-        </TeamSideBlock>
-      </TeamCard>
-    </StyledHeightContainer>
-    <CallToAction>
-      <h3>
-        Established <GatsbyLink to="/process">process</GatsbyLink> is the secret to our achievements
-      </h3>
-    </CallToAction>
-    <StyledHeightContainer>
-      <TeamCard>
-        <ResponsiveBackgroundImage
-          imageLg={data.kubarevImage}
-          imageMd={data.kubarevImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TeamSideBlock>
-          <h3>Alexey Kubarev</h3>
-          <p>Mobile Expert</p>
-        </TeamSideBlock>
-      </TeamCard>
-      <TeamCard>
-        <ResponsiveBackgroundImage imageLg={data.ivanovaImage} imageMd={data.ivanovaImageMd} />
-        <TeamSideBlock>
-          <h3>Olga Ivanova</h3>
-          <p>Frontend Creator</p>
-        </TeamSideBlock>
-      </TeamCard>
-    </StyledHeightContainer>
-    <CallToAction>
-      <h3>
-        Get in touch to discuss <strong>your project</strong>
-      </h3>
-    </CallToAction>
-  </Page>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.sorokinImage}
+            imageMd={data.sorokinImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Aleksandr Sorokin</h3>
+            <p>Full-Stack Pro</p>
+          </TeamSideBlock>
+        </TeamCard>
+      </StyledHeightContainer>
+      <CallToAction>
+        <h3>
+          Established <Link to="/process">process</Link> is the secret to our achievements
+        </h3>
+      </CallToAction>
+      <StyledHeightContainer>
+        <TeamCard>
+          <ResponsiveBackgroundImage
+            imageLg={data.kubarevImage}
+            imageMd={data.kubarevImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TeamSideBlock>
+            <h3>Alexey Kubarev</h3>
+            <p>Mobile Expert</p>
+          </TeamSideBlock>
+        </TeamCard>
+        <TeamCard>
+          <ResponsiveBackgroundImage imageLg={data.ivanovaImage} imageMd={data.ivanovaImageMd} />
+          <TeamSideBlock>
+            <h3>Olga Ivanova</h3>
+            <p>Frontend Creator</p>
+          </TeamSideBlock>
+        </TeamCard>
+      </StyledHeightContainer>
+      <CallToAction>
+        <h3>
+          Get in touch to discuss <strong>your project</strong>
+        </h3>
+      </CallToAction>
+    </Page>
+  </Layout>
 )
 
 export const query = graphql`
   query TeamData {
-    introImage: imageSharp(id: { regex: "/team_intro.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    introImage: file(relativePath: { eq: "team_intro.jpg" }) {
+      ...basicImage
     }
 
-    vaminevImage: imageSharp(id: { regex: "/team_vaminev.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    vaminevImage: file(relativePath: { eq: "team_vaminev.jpg" }) {
+      ...basicHalfNorthImage
     }
-    vaminevImageMd: imageSharp(id: { regex: "/team_vaminev.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    vaminevImageMd: file(relativePath: { eq: "team_vaminev.jpg" }) {
+      ...basicMdNorthImage
     }
 
-    kremenetsImage: imageSharp(id: { regex: "/team_kremenets.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    kremenetsImage: file(relativePath: { eq: "team_kremenets.jpg" }) {
+      ...basicHalfNorthImage
     }
-    kremenetsImageMd: imageSharp(id: { regex: "/team_kremenets.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    kremenetsImageMd: file(relativePath: { eq: "team_kremenets.jpg" }) {
+      ...basicMdNorthImage
     }
 
-    annaImage: imageSharp(id: { regex: "/team_anna.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    annaImage: file(relativePath: { eq: "team_anna.jpg" }) {
+      ...basicHalfNorthImage
     }
-    annaImageMd: imageSharp(id: { regex: "/team_anna.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    annaImageMd: file(relativePath: { eq: "team_anna.jpg" }) {
+      ...basicMdNorthImage
     }
 
-    poyarkovImage: imageSharp(id: { regex: "/team_poyarkov.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    poyarkovImage: file(relativePath: { eq: "team_poyarkov.jpg" }) {
+      ...basicHalfNorthImage
     }
-    poyarkovImageMd: imageSharp(id: { regex: "/team_poyarkov.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    poyarkovImageMd: file(relativePath: { eq: "team_poyarkov.jpg" }) {
+      ...basicMdNorthImage
     }
 
-    sorokinImage: imageSharp(id: { regex: "/team_sorokin.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    sorokinImage: file(relativePath: { eq: "team_sorokin.jpg" }) {
+      ...basicHalfNorthImage
     }
-    sorokinImageMd: imageSharp(id: { regex: "/team_sorokin.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
-      }
+    sorokinImageMd: file(relativePath: { eq: "team_sorokin.jpg" }) {
+      ...basicMdNorthImage
     }
 
-    bratchikovImage: imageSharp(id: { regex: "/team_bratchikov.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    bratchikovImage: file(relativePath: { eq: "team_bratchikov.jpg" }) {
+      ...basicHalfImage
     }
-    bratchikovImageMd: imageSharp(id: { regex: "/team_bratchikov_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    bratchikovImageMd: file(relativePath: { eq: "team_bratchikov_md.jpg" }) {
+      ...basicMdImage
     }
 
-    kubarevImage: imageSharp(id: { regex: "/team_kubarev.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    kubarevImage: file(relativePath: { eq: "team_kubarev.jpg" }) {
+      ...basicHalfImage
     }
-    kubarevImageMd: imageSharp(id: { regex: "/team_kubarev_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    kubarevImageMd: file(relativePath: { eq: "team_kubarev_md.jpg" }) {
+      ...basicMdImage
     }
 
-    ivanovaImage: imageSharp(id: { regex: "/team_ivanova.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    ivanovaImage: file(relativePath: { eq: "team_ivanova.jpg" }) {
+      ...basicHalfImage
     }
-    ivanovaImageMd: imageSharp(id: { regex: "/team_ivanova_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    ivanovaImageMd: file(relativePath: { eq: "team_ivanova_md.jpg" }) {
+      ...basicMdImage
     }
   }
 `

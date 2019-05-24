@@ -21,7 +21,7 @@ interface CardContainerProps {
   className?: string
 }
 
-export const HeightContainer: React.SFC<CardContainerProps> = ({ className, children }) => (
+export const HeightContainer: React.FC<CardContainerProps> = ({ className, children }) => (
   <Container>
     <Contents className={className}>{children}</Contents>
   </Container>

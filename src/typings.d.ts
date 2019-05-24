@@ -1,6 +1,3 @@
-// graphql query strings
-declare const graphql: (query: TemplateStringsArray) => void
-
 interface CSSModule {
   [className: string]: string
 }
@@ -33,18 +30,22 @@ declare module 'netlify-cms' {
   export default netlifyCms
 }
 
-interface SharpSizesImage {
-  sizes: {
-    aspectRatio: number
+interface SharpFluidImage {
+  childImageSharp: {
+    fluid: {
+      aspectRatio: number
+    }
   }
 }
-interface SharpResolutionsImage {
-  resolutions: {
-    base64: string
-    src: string
-    srcSet: string
-    height: number
-    width: number
+interface SharpFixedImage {
+  childImageSharp: {
+    fixed: {
+      base64: string
+      src: string
+      srcSet: string
+      height: number
+      width: number
+    }
   }
 }
-type SharpImage = SharpSizesImage | SharpResolutionsImage
+type SharpImage = SharpFluidImage | SharpFixedImage

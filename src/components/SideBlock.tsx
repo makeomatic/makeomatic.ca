@@ -1,13 +1,13 @@
 import * as React from 'react'
-import GatsbyLink from 'gatsby-link'
+import { Link } from 'gatsby'
 import styled from '../styles/styled-components'
 import { ReactComponent as MoreIcon } from '../assets/svg/more.svg'
 
-const ReadMore: React.SFC<{ className?: string; to: string }> = ({ className, to }) => (
+const ReadMore: React.FC<{ className?: string; to: string }> = ({ className, to }) => (
   <div>
-    <GatsbyLink className={className} to={to}>
+    <Link className={className} to={to}>
       Read more <MoreIcon />
-    </GatsbyLink>
+    </Link>
   </div>
 )
 
@@ -32,7 +32,7 @@ const Spacer = styled.div`
   flex-grow: 1;
 `
 
-const SideBlock: React.SFC<{ className?: string; more?: string }> = ({
+const SideBlock: React.FC<{ className?: string; more?: string }> = ({
   className,
   children,
   more,

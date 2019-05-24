@@ -20,7 +20,7 @@ export interface CardContentsProps {
   invert?: boolean
 }
 
-export const CardContents: React.SFC<CardContentsProps> = ({ className, invert, children }) => (
+export const CardContents: React.FC<CardContentsProps> = ({ className, invert, children }) => (
   <StyledContainer className={className} invert={invert}>
     {children}
   </StyledContainer>

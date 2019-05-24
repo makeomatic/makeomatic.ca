@@ -41,7 +41,7 @@ interface CardNoImageProps {
   text: React.ReactNode
 }
 
-export const CardNoImage: React.SFC<CardNoImageProps> = ({ className, header, text }) => (
+export const CardNoImage: React.FC<CardNoImageProps> = ({ className, header, text }) => (
   <StyledContainer className={className}>
     <Contents>
       <h2>{header}</h2>

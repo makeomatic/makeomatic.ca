@@ -1,11 +1,9 @@
 'use strict'
 
-const cssnext = require('postcss-cssnext')
-
 module.exports = {
   siteMetadata: {
-    title: 'makeomatic-landing',
-    description: 'Makeomatic landing',
+    title: 'Makeomatic',
+    description: 'Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications.',
     siteUrl: 'https://makeomatic.github.io/makeomatic-landing',
     author: {
       name: 'Alexey Khoroshev',
@@ -61,22 +59,21 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
+        prettier: true,
         icon: false,
-        viewBox: true,
+        svgo: false,
       },
     },
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
         logo: `${__dirname}/src/assets/img/favicon.png`,
-        injectHTML: true,
         icons: {
           android: true,
           appleIcon: true,
@@ -84,7 +81,6 @@ module.exports = {
           coast: false,
           favicons: true,
           firefox: true,
-          twitter: false,
           yandex: true,
           windows: true,
         },

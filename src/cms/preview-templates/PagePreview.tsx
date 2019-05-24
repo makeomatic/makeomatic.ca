@@ -7,4 +7,4 @@ interface IPagePreview {
   widgetFor(tag: string): React.ReactNode | React.ReactNodeArray
 }
 
-export const PagePreview: React.SFC<IPagePreview> = () => <div />
+export const PagePreview: React.FC<IPagePreview> = () => <div />

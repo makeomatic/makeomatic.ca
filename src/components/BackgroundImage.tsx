@@ -35,15 +35,15 @@ export type Align = 'center' | 'right'
 interface BackgroundImageProps {
   className?: string
   align?: Align
-  image: SharpResolutionsImage
+  image: SharpFixedImage
 }
 
-export const BackgroundImage: React.SFC<BackgroundImageProps> = ({
+export const BackgroundImage: React.FC<BackgroundImageProps> = ({
   image,
   className,
   align,
 }) => (
   <BackgroundImageContainer className={className}>
-    <StyledGatsbyImage resolutions={image.resolutions} align={align} />
+    <StyledGatsbyImage resolutions={image.childImageSharp.fixed} align={align} />
   </BackgroundImageContainer>
 )

@@ -18,14 +18,14 @@ const BackgroundImageMd = styled(BackgroundImage)`
 `
 
 interface ResponsiveBackgroundImageProps {
-  imageLg: SharpResolutionsImage
-  imageMd: SharpResolutionsImage
+  imageLg: SharpFixedImage
+  imageMd: SharpFixedImage
   alignLg?: Align
   alignMd?: Align
   className?: string
 }
 
-export const ResponsiveBackgroundImage: React.SFC<ResponsiveBackgroundImageProps> = ({
+export const ResponsiveBackgroundImage: React.FC<ResponsiveBackgroundImageProps> = ({
   imageLg,
   alignLg,
   imageMd,

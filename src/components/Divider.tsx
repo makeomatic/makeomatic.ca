@@ -38,6 +38,6 @@ interface DividerProps {
   className?: string
 }
 
-export const Divider: React.SFC<DividerProps> = ({ className, children }) => (
+export const Divider: React.FC<DividerProps> = ({ className, children }) => (
   <StyledContainer className={className}>{children}</StyledContainer>
 )

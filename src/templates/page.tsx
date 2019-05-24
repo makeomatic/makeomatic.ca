@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { graphql } from 'gatsby'
 import { Page } from '../components/Page'
 import { Container } from '../components/Container'
 
@@ -25,7 +26,7 @@ interface PageTemplateProps {
   }
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
+const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <Page>
     <Container>
       <h1>{data.markdownRemark.frontmatter.title}</h1>

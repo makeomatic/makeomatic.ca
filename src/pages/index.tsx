@@ -1,7 +1,8 @@
 import * as React from 'react'
 import styled from '../styles/styled-components'
 
-import GatsbyLink from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
+import { Layout } from '../components/Layout'
 import { Page } from '../components/Page'
 import { Intro } from '../components/Intro'
 import { HeightContainer } from '../components/HeightContainer'
@@ -14,22 +15,22 @@ import { getEmSize } from '../styles/mixins'
 
 interface IndexPageProps {
   data: {
-    introImage: SharpResolutionsImage
-    introImageMd: SharpResolutionsImage
-    section1Image: SharpResolutionsImage
-    section1ImageMd: SharpResolutionsImage
-    section2Image: SharpResolutionsImage
-    section2ImageMd: SharpResolutionsImage
-    section3Image: SharpResolutionsImage
-    section3ImageMd: SharpResolutionsImage
-    section4Image: SharpResolutionsImage
-    section4ImageMd: SharpResolutionsImage
-    section51Image: SharpResolutionsImage
-    section51ImageMd: SharpResolutionsImage
-    section52Image: SharpResolutionsImage
-    section52ImageMd: SharpResolutionsImage
-    section6Image: SharpResolutionsImage
-    section6ImageMd: SharpResolutionsImage
+    introImage: SharpFixedImage
+    introImageMd: SharpFixedImage
+    section1Image: SharpFixedImage
+    section1ImageMd: SharpFixedImage
+    section2Image: SharpFixedImage
+    section2ImageMd: SharpFixedImage
+    section3Image: SharpFixedImage
+    section3ImageMd: SharpFixedImage
+    section4Image: SharpFixedImage
+    section4ImageMd: SharpFixedImage
+    section51Image: SharpFixedImage
+    section51ImageMd: SharpFixedImage
+    section52Image: SharpFixedImage
+    section52ImageMd: SharpFixedImage
+    section6Image: SharpFixedImage
+    section6ImageMd: SharpFixedImage
   }
 }
 
@@ -135,284 +136,298 @@ const ArtuneSideBlock = styled(StyledSideBlock)`
   `};
 `
 
-const IndexPage: React.SFC<IndexPageProps> = ({ data }) => (
-  <Page>
-    <Intro
-      header={
-        <span>
-          Ideas
-          <br />
-          Turned Products
-        </span>
-      }
-      text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
-    >
-      <ResponsiveBackgroundImage
-        imageLg={data.introImage}
-        imageMd={data.introImageMd}
-        alignLg="center"
-        alignMd="center"
-      />
-    </Intro>
-    <Divider>
-      <h2>Enter Innovation Lab</h2>
-      <p>
-        Whether you have a business plan, a sketch or just a few ideas about the product you'd like
-        to realize, <GatsbyLink to="/process">we work with you</GatsbyLink> from that point onwards,
-        all the way through validating your market assumption, designing an optimal solution, and
-        developing a prototype to be tested and iterated upon based on the feedback from the market
-        until it becomes a sustainable product.
-      </p>
-    </Divider>
-    <HeightContainer>
-      <CardContents>
-        <ResponsiveBackgroundImage
-          imageLg={data.section1Image}
-          imageMd={data.section1ImageMd}
-          alignLg="center"
-          alignMd="right"
-        />
-        <StyledSideBlock more="/contacts">
-          <h3>Cappasity 3D</h3>
-          <SubHeader>
-            Cappasity Cloud platform,
+const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
+  <Layout>
+    <Page>
+      <Intro
+        header={
+          <span>
+            Ideas
             <br />
-            Cappasity Blockchain
-          </SubHeader>
-          <Desc>
-            Cappasity is your cutting-edge web development and design partner specializing in
-            creating high-load interactive applications.
-          </Desc>
-        </StyledSideBlock>
-      </CardContents>
-    </HeightContainer>
-    <HeightContainer>
-      <CardContents>
+            Turned Products
+          </span>
+        }
+        text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
+      >
         <ResponsiveBackgroundImage
-          imageLg={data.section2Image}
-          imageMd={data.section2ImageMd}
-          alignLg="center"
-          alignMd="right"
-        />
-        <StyledSideBlock more="/contacts">
-          <h3>Radio FX</h3>
-          <SubHeader>
-            iOS & Android apps,
-            <br />
-            Cloud platform, design
-          </SubHeader>
-          <Desc>
-            RadioFX is your cutting-edge web development and design partner specializing in creating
-            high-load interactive applications.
-          </Desc>
-        </StyledSideBlock>
-      </CardContents>
-    </HeightContainer>
-    <HeightContainer>
-      <CardContents>
-        <ResponsiveBackgroundImage
-          imageLg={data.section3Image}
-          imageMd={data.section3ImageMd}
+          imageLg={data.introImage}
+          imageMd={data.introImageMd}
           alignLg="center"
           alignMd="center"
         />
-        <StyledSideBlock more="/contacts">
-          <InvertMdHeader>Microfleet</InvertMdHeader>
-          <SubHeader>
-            Our product
-            <br />
-            Scalable framework
-          </SubHeader>
-          <Desc>
-            Microfleet is your cutting-edge web development and design partner specializing in
-            creating high-load interactive applications.
-          </Desc>
-        </StyledSideBlock>
-      </CardContents>
-    </HeightContainer>
-    <GeometryDividerContainer>
-      <GeometryDivider>
-        <h2>Behind The Scene</h2>
+      </Intro>
+      <Divider>
+        <h2>Enter Innovation Lab</h2>
         <p>
-          A <GatsbyLink to="/team">cohesive team</GatsbyLink> of engineers, designers and project
-          managers headquartered in in beautiful Vancouver, BC
+          Whether you have a business plan, a sketch or just a few ideas about the product you'd
+          like to realize, <Link to="/process">we work with you</Link> from that point onwards, all
+          the way through validating your market assumption, designing an optimal solution, and
+          developing a prototype to be tested and iterated upon based on the feedback from the
+          market until it becomes a sustainable product.
         </p>
-      </GeometryDivider>
-    </GeometryDividerContainer>
-    <HeightContainer>
-      <CardContents>
-        <ResponsiveBackgroundImage
-          imageLg={data.section4Image}
-          imageMd={data.section4ImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <StyledSideBlock more="/contacts">
-          <h3>True Preferences</h3>
-          <SubHeader>
-            iOS & Android apps,
-            <br />
-            Cloud platform, design
-          </SubHeader>
-          <Desc>
-            True Preferences is your cutting-edge web development and design partner specializing in
-            in creating high-load interactive applications.
-          </Desc>
-        </StyledSideBlock>
-      </CardContents>
-    </HeightContainer>
-    <StyledHeightContainer>
-      <StyledCardContents>
-        <ResponsiveBackgroundImage
-          imageLg={data.section51Image}
-          imageMd={data.section51ImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <TransparentSideBlock more="/contacts">
-          <h3>Byczynski</h3>
-          <SubHeader>
-            Branding,
-            <br />
-            Print materials
-          </SubHeader>
-        </TransparentSideBlock>
-      </StyledCardContents>
-      <StyledCardContents>
-        <ResponsiveBackgroundImage
-          imageLg={data.section52Image}
-          imageMd={data.section52ImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <BlackTransparentSideBlock more="/contacts">
-          <h3>Gemix</h3>
-          <SubHeader>
-            Branding,
-            <br />
-            Print materials
-          </SubHeader>
-        </BlackTransparentSideBlock>
-      </StyledCardContents>
-    </StyledHeightContainer>
-    <HeightContainer>
-      <CardContents>
-        <ResponsiveBackgroundImage
-          imageLg={data.section6Image}
-          imageMd={data.section6ImageMd}
-          alignLg="center"
-          alignMd="center"
-        />
-        <ArtuneSideBlock more="/contacts">
-          <h3>Artune</h3>
-          <SubHeader>
-            iOS app,
-            <br />
-            Software
-          </SubHeader>
-          <Desc>
-            Artune is your cutting-edge web development and design partner specializing in creating
-            high-load interactive applications.
-          </Desc>
-        </ArtuneSideBlock>
-      </CardContents>
-    </HeightContainer>
-    <CallToAction>
-      <h2>
-        Ask us about <GatsbyLink to="/process">your project</GatsbyLink>
-      </h2>
-    </CallToAction>
-  </Page>
+      </Divider>
+      <HeightContainer>
+        <CardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section1Image}
+            imageMd={data.section1ImageMd}
+            alignLg="center"
+            alignMd="right"
+          />
+          <StyledSideBlock more="/contacts">
+            <h3>Cappasity 3D</h3>
+            <SubHeader>
+              Cappasity Cloud platform,
+              <br />
+              Cappasity Blockchain
+            </SubHeader>
+            <Desc>
+              Cappasity is your cutting-edge web development and design partner specializing in
+              creating high-load interactive applications.
+            </Desc>
+          </StyledSideBlock>
+        </CardContents>
+      </HeightContainer>
+      <HeightContainer>
+        <CardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section2Image}
+            imageMd={data.section2ImageMd}
+            alignLg="center"
+            alignMd="right"
+          />
+          <StyledSideBlock more="/contacts">
+            <h3>Radio FX</h3>
+            <SubHeader>
+              iOS & Android apps,
+              <br />
+              Cloud platform, design
+            </SubHeader>
+            <Desc>
+              RadioFX is your cutting-edge web development and design partner specializing in
+              creating high-load interactive applications.
+            </Desc>
+          </StyledSideBlock>
+        </CardContents>
+      </HeightContainer>
+      <HeightContainer>
+        <CardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section3Image}
+            imageMd={data.section3ImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <StyledSideBlock more="/contacts">
+            <InvertMdHeader>Microfleet</InvertMdHeader>
+            <SubHeader>
+              Our product
+              <br />
+              Scalable framework
+            </SubHeader>
+            <Desc>
+              Microfleet is your cutting-edge web development and design partner specializing in
+              creating high-load interactive applications.
+            </Desc>
+          </StyledSideBlock>
+        </CardContents>
+      </HeightContainer>
+      <GeometryDividerContainer>
+        <GeometryDivider>
+          <h2>Behind The Scene</h2>
+          <p>
+            A <Link to="/team">cohesive team</Link> of engineers, designers and project managers
+            headquartered in in beautiful Vancouver, BC
+          </p>
+        </GeometryDivider>
+      </GeometryDividerContainer>
+      <HeightContainer>
+        <CardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section4Image}
+            imageMd={data.section4ImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <StyledSideBlock more="/contacts">
+            <h3>True Preferences</h3>
+            <SubHeader>
+              iOS & Android apps,
+              <br />
+              Cloud platform, design
+            </SubHeader>
+            <Desc>
+              True Preferences is your cutting-edge web development and design partner specializing
+              in creating high-load interactive applications.
+            </Desc>
+          </StyledSideBlock>
+        </CardContents>
+      </HeightContainer>
+      <StyledHeightContainer>
+        <StyledCardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section51Image}
+            imageMd={data.section51ImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <TransparentSideBlock more="/contacts">
+            <h3>Byczynski</h3>
+            <SubHeader>
+              Branding,
+              <br />
+              Print materials
+            </SubHeader>
+          </TransparentSideBlock>
+        </StyledCardContents>
+        <StyledCardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section52Image}
+            imageMd={data.section52ImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <BlackTransparentSideBlock more="/contacts">
+            <h3>Gemix</h3>
+            <SubHeader>
+              Branding,
+              <br />
+              Print materials
+            </SubHeader>
+          </BlackTransparentSideBlock>
+        </StyledCardContents>
+      </StyledHeightContainer>
+      <HeightContainer>
+        <CardContents>
+          <ResponsiveBackgroundImage
+            imageLg={data.section6Image}
+            imageMd={data.section6ImageMd}
+            alignLg="center"
+            alignMd="center"
+          />
+          <ArtuneSideBlock more="/contacts">
+            <h3>Artune</h3>
+            <SubHeader>
+              iOS app,
+              <br />
+              Software
+            </SubHeader>
+            <Desc>
+              Artune is your cutting-edge web development and design partner specializing in
+              creating high-load interactive applications.
+            </Desc>
+          </ArtuneSideBlock>
+        </CardContents>
+      </HeightContainer>
+      <CallToAction>
+        <h2>
+          Ask us about <Link to="/process">your project</Link>
+        </h2>
+      </CallToAction>
+    </Page>
+  </Layout>
 )
 
 export const query = graphql`
+  fragment basicImage on File {
+    childImageSharp {
+      fixed(width: 1280, height: 700, quality: 85) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment basicMdImage on File {
+    childImageSharp {
+      fixed(width: 960, height: 520, quality: 85) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment basicMdNorthImage on File {
+    childImageSharp {
+      fixed(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment basicHalfImage on File {
+    childImageSharp {
+      fixed(width: 640, height: 700, quality: 85) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment basicHalfNorthImage on File {
+    childImageSharp {
+      fixed(width: 640, height: 700, quality: 85, cropFocus: NORTH) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+
   query IndexData {
-    introImage: imageSharp(id: { regex: "/work_intro.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    introImage: file(relativePath: { eq: "work_intro.jpg" }) {
+      ...basicImage
     }
-    introImageMd: imageSharp(id: { regex: "/work_intro_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTH) {
-        ...GatsbyImageSharpResolutions
+    introImageMd: file(relativePath: { eq: "work_intro_md.jpg" }) {
+      ...basicMdNorthImage
+    }
+
+    section1Image: file(relativePath: { eq: "work_cappasity.jpg" }) {
+      ...basicImage
+    }
+    section1ImageMd: file(relativePath: { eq: "work_cappasity_md.jpg" }) {
+      childImageSharp {
+        fixed(width: 960, height: 520, quality: 85, cropFocus: EAST) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
 
-    section1Image: imageSharp(id: { regex: "/work_cappasity.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section2Image: file(relativePath: { eq: "work_radio.jpg" }) {
+      ...basicImage
     }
-    section1ImageMd: imageSharp(id: { regex: "/work_cappasity_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: EAST) {
-        ...GatsbyImageSharpResolutions
-      }
-    }
-
-    section2Image: imageSharp(id: { regex: "/work_radio.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
-    }
-    section2ImageMd: imageSharp(id: { regex: "/work_radio_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85, cropFocus: NORTHEAST) {
-        ...GatsbyImageSharpResolutions
+    section2ImageMd: file(relativePath: { eq: "work_radio_md.jpg" }) {
+      childImageSharp {
+        fixed(width: 960, height: 520, quality: 85, cropFocus: NORTHEAST) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
 
-    section3Image: imageSharp(id: { regex: "/work_microfleet.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section3Image: file(relativePath: { eq: "work_microfleet.jpg" }) {
+      ...basicImage
     }
-    section3ImageMd: imageSharp(id: { regex: "/work_microfleet_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section3ImageMd: file(relativePath: { eq: "work_microfleet_md.jpg" }) {
+      ...basicMdImage
     }
 
-    section4Image: imageSharp(id: { regex: "/work_truepref.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section4Image: file(relativePath: { eq: "work_truepref.jpg" }) {
+      ...basicImage
     }
-    section4ImageMd: imageSharp(id: { regex: "/work_truepref_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section4ImageMd: file(relativePath: { eq: "work_truepref_md.jpg" }) {
+      ...basicMdImage
     }
 
-    section51Image: imageSharp(id: { regex: "/work_buc.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section51Image: file(relativePath: { eq: "work_buc.jpg" }) {
+      ...basicHalfImage
     }
-    section51ImageMd: imageSharp(id: { regex: "/work_buc_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section51ImageMd: file(relativePath: { eq: "work_buc_md.jpg" }) {
+      ...basicMdImage
     }
 
-    section52Image: imageSharp(id: { regex: "/work_gemix.jpg/" }) {
-      resolutions(width: 640, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section52Image: file(relativePath: { eq: "work_gemix.jpg" }) {
+      ...basicHalfImage
     }
-    section52ImageMd: imageSharp(id: { regex: "/work_gemix_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section52ImageMd: file(relativePath: { eq: "work_gemix_md.jpg" }) {
+      ...basicMdImage
     }
 
-    section6Image: imageSharp(id: { regex: "/work_artune.jpg/" }) {
-      resolutions(width: 1280, height: 700, quality: 85) {
-        ...GatsbyImageSharpResolutions
-      }
+    section6Image: file(relativePath: { eq: "work_artune.jpg" }) {
+      ...basicImage
     }
-    section6ImageMd: imageSharp(id: { regex: "/work_artune_md.jpg/" }) {
-      resolutions(width: 960, height: 520, quality: 90) {
-        ...GatsbyImageSharpResolutions
-      }
+    section6ImageMd: file(relativePath: { eq: "work_artune_md.jpg" }) {
+      ...basicMdImage
     }
   }
 `

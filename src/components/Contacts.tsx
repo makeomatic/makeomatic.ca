@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '../styles/styled-components'
-import GatsbyLink from 'gatsby-link'
+import { Link } from 'gatsby'
 import { Container } from './Container'
 import { ReactComponent as LogoIcon } from '../assets/svg/logo.svg'
 import { ReactComponent as GithubIcon } from '../assets/svg/icon_github.svg'
@@ -70,7 +70,7 @@ const Links = styled.div`
   `};
 `
 
-const StyledLink = styled(GatsbyLink)`
+const StyledLink = styled(Link)`
   display: block;
 `
 
@@ -106,7 +106,7 @@ const Social = styled.div`
   }
 `
 
-export const Contacts: React.SFC<{}> = () => (
+export const Contacts: React.FC<{}> = () => (
   <StyledContactsContainer id="contacts">
     <StyledContacts>
       <StyledLogoIcon />

@@ -11,6 +11,6 @@ interface LayoutMainProps {
   className?: string
 }
 
-export const LayoutMain: React.SFC<LayoutMainProps> = ({ children, className }) => (
+export const LayoutMain: React.FC<LayoutMainProps> = ({ children, className }) => (
   <StyledLayoutMain className={className}>{children}</StyledLayoutMain>
 )

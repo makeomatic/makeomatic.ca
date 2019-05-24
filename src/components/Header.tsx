@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from '../styles/styled-components'
 import { ReactComponent as LogoIcon } from '../assets/svg/logo.svg'
 import { ReactComponent as LogoIconMd } from '../assets/svg/logo_md.svg'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 import { onEvent } from '../styles/mixins'
 import { Container } from './Container'
@@ -80,7 +80,6 @@ const Nav = styled.nav`
 
 const NavLink = styled(HeaderLink).attrs({
   activeClassName: 'active',
-  exact: true,
 })`
   margin-right: 2rem;
   text-transform: uppercase;
@@ -94,25 +93,19 @@ interface HeaderProps {
   title: string
 }
 
-export const Header: React.SFC<HeaderProps> = () => (
+export const Header: React.FC<HeaderProps> = () => (
   <StyledHeader>
     <HeaderInner>
       <LogoContainer>
-        <HeaderLink to="/" href="/">
+        <HeaderLink to="/">
           <StyledLogoIcon />
           <StyledLogoIconMd />
         </HeaderLink>
       </LogoContainer>
       <Nav>
-        <NavLink to="/" href="/">
-          Work
-        </NavLink>
-        <NavLink to="/team" href="/team">
-          About
-        </NavLink>
-        <NavLink to="/process" href="/process">
-          Our process
-        </NavLink>
+        <NavLink to="/">Work</NavLink>
+        <NavLink to="/team">About</NavLink>
+        <NavLink to="/process">Our process</NavLink>
         <NavAnchor href="#contacts">Get in touch</NavAnchor>
       </Nav>
     </HeaderInner>

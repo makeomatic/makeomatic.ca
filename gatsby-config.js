@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Makeomatic',
     description: 'Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications.',
-    siteUrl: 'https://makeomatic.github.io/makeomatic-landing',
+    siteUrl: 'https://makeomatic.github.io/makeomatic.ca',
     author: {
       name: 'Alexey Khoroshev',
       url: 'https://github.com/aleksxor',
@@ -62,6 +62,13 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-140718608-1',
+        head: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-svgr',
       options: {

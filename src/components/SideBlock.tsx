@@ -13,8 +13,7 @@ const ReadMore: React.FC<{ className?: string; to: string }> = ({ className, to 
 
 const StyledReadMore = styled(ReadMore)`
   font-size: 1.375rem;
-  // display: inline-block;
-  display: none;
+  display: inline-block;
   color: inherit;
 
   &:hover {

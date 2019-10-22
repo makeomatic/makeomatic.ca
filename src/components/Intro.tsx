@@ -36,8 +36,8 @@ const Contents = styled.div`
 
 interface IntroProps {
   className?: string
-  header: React.ReactNode
-  text: React.ReactNode
+  header?: React.ReactNode
+  text?: React.ReactNode
 }
 
 export const Intro: React.FC<IntroProps> = ({ className, children, header, text }) => (

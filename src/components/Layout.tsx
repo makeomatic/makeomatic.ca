@@ -14,7 +14,12 @@ import { Normalize } from './Normalize'
 if (typeof window !== 'undefined') {
   require('webfontloader').load({
     google: {
-      families: ['Rozha One:400:latin', 'Assistant:400,600,700:latin'],
+      families: [
+        'Rozha One:400:latin',
+        'Assistant:400,600,700:latin',
+        'Nunito Sans:800:latin',
+        'Merriweather:400:latin',
+      ],
     },
   })
 }
@@ -30,6 +35,7 @@ interface SiteData {
 
 interface WrapperProps {
   children: React.ReactElement
+  invert?: boolean
 }
 
 const query = graphql`
@@ -43,7 +49,7 @@ const query = graphql`
   }
 `
 
-export const Layout: React.FC<WrapperProps> = ({ children }) => (
+export const Layout: React.FC<WrapperProps> = ({ children, invert }) => (
   <ThemeProvider theme={theme}>
     <LayoutRoot>
       <StaticQuery
@@ -57,7 +63,7 @@ export const Layout: React.FC<WrapperProps> = ({ children }) => (
                 { name: 'keywords', content: 'makeomatic, landing' },
               ]}
             />
-            <Header title={data.site.siteMetadata.title} />
+            <Header title={data.site.siteMetadata.title} invert={invert} />
           </>
         )}
       />

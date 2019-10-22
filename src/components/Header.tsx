@@ -7,9 +7,28 @@ import { Link } from 'gatsby'
 import { onEvent } from '../styles/mixins'
 import { Container } from './Container'
 
-const StyledHeader = styled.header`
+const HeaderLink = styled(Link)`
+  ${onEvent`
+    text-decoration: none;
+  `};
+`
+
+const NavAnchor = styled.a`
+  text-transform: uppercase;
+
+  ${onEvent`
+    text-decoration: none;
+  `};
+`
+
+const StyledHeader = styled.header<{ invert?: boolean }>`
   height: 136px;
-  color: ${p => p.theme.colors.white};
+  background-color: ${p => (p.invert ? p.theme.colors.white : 'inherit')};
+  color: ${p => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
+
+  & ${HeaderLink}, & ${NavAnchor} {
+    color: ${p => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
+  }
 
   ${p => p.theme.media.md`
     height: auto;
@@ -26,23 +45,6 @@ const HeaderInner = styled(Container)`
   ${p => p.theme.media.md`
     display: block;
     padding: 2rem 1rem 1rem;
-  `};
-`
-
-const HeaderLink = styled(Link)`
-  color: ${p => p.theme.colors.white};
-
-  ${onEvent`
-    text-decoration: none;
-  `};
-`
-
-const NavAnchor = styled.a`
-  color: ${p => p.theme.colors.white};
-  text-transform: uppercase;
-
-  ${onEvent`
-    text-decoration: none;
   `};
 `
 
@@ -91,10 +93,11 @@ const NavLink = styled(HeaderLink).attrs({
 
 interface HeaderProps {
   title: string
+  invert?: boolean
 }
 
-export const Header: React.FC<HeaderProps> = () => (
-  <StyledHeader>
+export const Header: React.FC<HeaderProps> = ({ invert }) => (
+  <StyledHeader invert={invert}>
     <HeaderInner>
       <LogoContainer>
         <HeaderLink to="/">

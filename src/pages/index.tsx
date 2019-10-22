@@ -174,7 +174,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="right"
           />
-          <StyledSideBlock more="/contacts">
+          <StyledSideBlock more="/cappasity">
             <h3>Cappasity 3D</h3>
             <SubHeader>
               Cappasity Cloud platform,
@@ -196,7 +196,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="right"
           />
-          <StyledSideBlock more="/contacts">
+          <StyledSideBlock>
             <h3>Radio FX</h3>
             <SubHeader>
               iOS & Android apps,
@@ -218,7 +218,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="center"
           />
-          <StyledSideBlock more="/contacts">
+          <StyledSideBlock>
             <InvertMdHeader>Microfleet</InvertMdHeader>
             <SubHeader>
               Our product
@@ -249,7 +249,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="center"
           />
-          <StyledSideBlock more="/contacts">
+          <StyledSideBlock>
             <h3>True Preferences</h3>
             <SubHeader>
               iOS & Android apps,

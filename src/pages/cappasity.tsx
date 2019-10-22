@@ -52,7 +52,7 @@ const IntroContents = styled.div`
     font-family: Merriweather;
     font-size: 1.375rem;
   }
-  
+
   ${p => p.theme.media.md`
     
   `};
@@ -75,30 +75,34 @@ const StyledIframe = styled.iframe`
   `};
 `
 const StyledDivider = styled(Divider)`
-  background-color: ${p => p.theme.colors.white};
-  color: ${p => p.theme.colors.black};
-  padding-left: 12.5rem;
-  padding-right: 12.5rem;
+  && {
+    background-color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.black};
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
 
-  ${p => p.theme.media.md`
-    padding-left: 1rem;
-    padding-right: 1rem;
-  `}
+    ${p => p.theme.media.md`
+      padding-left: 1rem;
+      padding-right: 1rem;
+    `}
 
-  h2 {
-    font-family: 'Nunito Sans';
-    font-weight: 800;
-    margin-bottom: 2rem;
-    max-width: none;
-  }
+    h2 {
+      font-family: 'Nunito Sans';
+      font-weight: 800;
+      margin-bottom: 2rem;
+      max-width: none;
+    }
 
-  p {
-    font-family: Merriweather;
-    max-width: none;
+    p {
+      font-family: Merriweather;
+      max-width: none;
+    }
   }
 `
 const StyledBackgroundImage = styled(BackgroundImage)`
-  z-index: 0;
+  && {
+    z-index: 0;
+  }
 `
 const StyledModelContainer = styled(HeightContainer)`
   height: 300px;

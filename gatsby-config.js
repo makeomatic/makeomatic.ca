@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Makeomatic',
     description: 'Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications.',
-    siteUrl: 'https://makeomatic.github.io/makeomatic.ca',
+    siteUrl: 'https://makeomatic.ca',
     author: {
       name: 'Alexey Khoroshev',
       url: 'https://github.com/aleksxor',
@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+        siteUrl: 'https://makeomatic.ca/'
       }
     },
     'gatsby-plugin-styled-components',

@@ -54,7 +54,7 @@ const IntroContents = styled.div`
   }
 
   ${p => p.theme.media.md`
-    
+
   `};
 `
 const StyledIframe = styled.iframe`

@@ -32,11 +32,11 @@ const LeftSideBlock = styled(StyledSideBlock)`
   ${p => p.theme.media.md`
     width: auto;
     height: auto;
-    
+
     h3 {
       margin-top: 0;
     }
-    
+
     p {
       font-size: 1.25rem;
       margin-top: 0.5rem;
@@ -126,7 +126,7 @@ const StyledBackgroundImage = styled(ResponsiveBackgroundImage)`
 const BlockHeader = styled.div`
   ${p => p.theme.media.md`
     margin-top: 2rem;
-  
+
     svg {
       float: left;
       margin-right: 1.5rem;
@@ -140,7 +140,7 @@ const Br = styled.span`
 
   ${p => p.theme.media.md`
     display: inline;
-    
+
     &::after {
       content: ' ';
     }
@@ -165,7 +165,7 @@ const ProcessPage: React.FC<ProcessPageProps> = ({ data }) => (
   <Layout>
     <Page>
       <Intro
-        header="Efficiency Build In-House"
+        header="Efficiency Built In-House"
         text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
       >
         <BackgroundImage image={data.introImage} align="right" />

@@ -38,11 +38,7 @@ interface BackgroundImageProps {
   image: SharpFixedImage
 }
 
-export const BackgroundImage: React.FC<BackgroundImageProps> = ({
-  image,
-  className,
-  align,
-}) => (
+export const BackgroundImage: React.FC<BackgroundImageProps> = ({ image, className, align }) => (
   <BackgroundImageContainer className={className}>
     <StyledGatsbyImage resolutions={image.childImageSharp.fixed} align={align} />
   </BackgroundImageContainer>

@@ -147,7 +147,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             Turned Products
           </span>
         }
-        text="Makeomatic is your cutting-edge web development and design partner specializing in creating high-load interactive applications."
+        text="Makeomatic is your long-term web development and design partner specializing in creating high-load interactive applications."
       >
         <ResponsiveBackgroundImage
           imageLg={data.introImage}
@@ -159,9 +159,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
       <Divider>
         <h2>Enter Innovation Lab</h2>
         <p>
-          Whether you have a business plan, a sketch or just a few ideas about the product you'd
-          like to realize, <Link to="/process">we work with you</Link> from that point onwards, all
-          the way through validating your market assumption, designing an optimal solution, and
+          Whether you have a business plan, sketch or just a few ideas about the product you'd like
+          to create, <Link to="/process">we work with you</Link> from that point onwards, all the
+          way through validating your market assumption, designing an optimal solution and
           developing a prototype to be tested and iterated upon based on the feedback from the
           market until it becomes a sustainable product.
         </p>
@@ -182,8 +182,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
               Cappasity Blockchain
             </SubHeader>
             <Desc>
-              Cappasity is your cutting-edge web development and design partner specializing in
-              creating high-load interactive applications.
+              Bring an in-store browsing experience to online retail with Cappasity, the first
+              complete 3D product imaging solution for your website, mobile app, VR and AR
+              applications.
             </Desc>
           </StyledSideBlock>
         </CardContents>
@@ -204,8 +205,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
               Cloud platform, design
             </SubHeader>
             <Desc>
-              RadioFX is your cutting-edge web development and design partner specializing in
-              creating high-load interactive applications.
+              Delivering the power of social radio to college stations through their very own custom
+              mobile app experience.
             </Desc>
           </StyledSideBlock>
         </CardContents>
@@ -221,13 +222,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           <StyledSideBlock>
             <InvertMdHeader>Microfleet</InvertMdHeader>
             <SubHeader>
-              Our product
+              Node.js
               <br />
-              Scalable framework
+              Microservices Toolkit
             </SubHeader>
             <Desc>
-              Microfleet is your cutting-edge web development and design partner specializing in
-              creating high-load interactive applications.
+              Opinionated framework with simple, flexible, scalable and resilent prebuilt
+              microservices that glue together like lego blocks.
             </Desc>
           </StyledSideBlock>
         </CardContents>
@@ -237,7 +238,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           <h2>Behind The Scene</h2>
           <p>
             A <Link to="/team">cohesive team</Link> of engineers, designers and project managers
-            headquartered in in beautiful Vancouver, BC
+            headquartered in beautiful Vancouver, BC
           </p>
         </GeometryDivider>
       </GeometryDividerContainer>
@@ -257,8 +258,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
               Cloud platform, design
             </SubHeader>
             <Desc>
-              True Preferences is your cutting-edge web development and design partner specializing
-              in creating high-load interactive applications.
+              Lose weight for good and increase your wellbeing: Using a smartphone camera, discover
+              the foods that have been holding you back.
             </Desc>
           </StyledSideBlock>
         </CardContents>
@@ -313,8 +314,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
               Software
             </SubHeader>
             <Desc>
-              Artune is your cutting-edge web development and design partner specializing in
-              creating high-load interactive applications.
+              Artune is a Social Platform to trade and discover new art open to Artists, Art lovers,
+              Galleries, Collectors, Medias, Art Spaces, Art fairs and all Members of the art world
+              community.
             </Desc>
           </ArtuneSideBlock>
         </CardContents>

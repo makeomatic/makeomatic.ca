@@ -272,7 +272,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="center"
           />
-          <TransparentSideBlock more="/contacts">
+          <TransparentSideBlock>
             <h3>Byczynski</h3>
             <SubHeader>
               Branding,
@@ -288,7 +288,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="center"
           />
-          <BlackTransparentSideBlock more="/contacts">
+          <BlackTransparentSideBlock>
             <h3>Gemix</h3>
             <SubHeader>
               Branding,
@@ -306,7 +306,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="center"
           />
-          <ArtuneSideBlock more="/contacts">
+          <ArtuneSideBlock>
             <h3>Artune</h3>
             <SubHeader>
               iOS app,

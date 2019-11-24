@@ -14,5 +14,5 @@ jobs:
     - uses: enriikke/gatsby-gh-pages-action@2.1.1
       with:
         # A personal access token needed to push your site after it has been built.
-        access-token: ${{ secrets.GITHUB_TOKEN }}
+        access-token: ${{ secrets.GH_ACCESS_TOKEN }}
         deploy-branch: gh-pages

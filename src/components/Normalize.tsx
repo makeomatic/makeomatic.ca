@@ -27,7 +27,7 @@ export const Normalize = createGlobalStyle`
   body {
     width: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     font-family: ${fonts.sansSerif};
     color: ${colors.white};
     font-weight: 400;

@@ -12,6 +12,7 @@ import { CallToAction } from '../components/CallToAction'
 import { StyledSideBlock } from '../components/SideBlock'
 import { ResponsiveBackgroundImage } from '../components/ResponsiveBackgroundImage'
 import { getEmSize } from '../styles/mixins'
+import { TeaserBackgroundImage } from '../components/TeaserBackgroundImage'
 
 interface IndexPageProps {
   data: {
@@ -19,8 +20,11 @@ interface IndexPageProps {
     introImageMd: SharpFixedImage
     section1Image: SharpFixedImage
     section1ImageMd: SharpFixedImage
+    section1ImageSm: SharpFixedImage
+    section1ImageXs: SharpFixedImage
     section2Image: SharpFixedImage
-    section2ImageMd: SharpFixedImage
+    section2ImageSm: SharpFixedImage
+    section2ImageXs: SharpFixedImage
     section3Image: SharpFixedImage
     section3ImageMd: SharpFixedImage
     section4Image: SharpFixedImage
@@ -136,6 +140,88 @@ const ArtuneSideBlock = styled(StyledSideBlock)`
   `};
 `
 
+/*
+  new teaser blocks
+ */
+
+const TeaserBlock = styled(HeightContainer)`
+  height: ${getEmSize(700)}em;
+
+  ${p => p.theme.media.sm`
+    height: ${getEmSize(812)}em;
+  `};
+  ${p => p.theme.media.xs`
+    height: ${getEmSize(896)}em;
+  `};
+`
+
+const TeaserTextBlock = styled.div`
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 470px;
+
+  ${p => p.theme.media.sm`
+    width: 290px;
+    justify-content: flex-start;
+    margin-left: 16px;
+    margin-top: 118px;
+  `};
+`
+const TeaserTitle = styled.div`
+  color: ${p => p.theme.colors.white};
+  font-size: 56px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  line-height: 61px;
+
+  ${p => p.theme.media.sm`
+    font-size: 34px;
+    line-height: 45px;
+  `};
+`
+const TeaserDesc = styled.div`
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: normal;
+  margin-top: 40px;
+
+  ${p => p.theme.media.sm`
+    margin-top: 20px;
+    font-size: 22px;
+    line-height: 28px;
+  `};
+`
+const TeaserReadMore = styled.div`
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 28px;
+
+  & a {
+    text-decoration: underline;
+  }
+
+  ${p => p.theme.media.sm`
+    font-size: 22px;
+    margin-top: 20px;
+  `};
+`
+
+// specific classes
+
+const PaymentsTeaserTextBlock = styled(TeaserTextBlock)`
+  padding-top: 70px;
+
+  ${p => p.theme.media.sm`
+    padding-top: 0;
+  `};
+`
+
+// end teaser blocks
+
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
   <Layout>
     <Page>
@@ -166,51 +252,49 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           market until it becomes a sustainable product.
         </p>
       </Divider>
-      <HeightContainer>
+      <TeaserBlock>
         <CardContents>
-          <ResponsiveBackgroundImage
+          <TeaserBackgroundImage
             imageLg={data.section1Image}
             imageMd={data.section1ImageMd}
-            alignLg="center"
-            alignMd="right"
+            imageSm={data.section1ImageSm}
+            imageXs={data.section1ImageXs}
+            alignLg="left"
+            alignMd="left"
+            alignSm="left"
+            alignXs="left"
           />
-          <StyledSideBlock more="/cappasity">
-            <h3>Cappasity 3D</h3>
-            <SubHeader>
-              Cappasity Cloud platform,
-              <br />
-              Cappasity Blockchain
-            </SubHeader>
-            <Desc>
-              Bring an in-store browsing experience to online retail with Cappasity, the first
-              complete 3D product imaging solution for your website, mobile app, VR and AR
-              applications.
-            </Desc>
-          </StyledSideBlock>
+          <PaymentsTeaserTextBlock>
+            <TeaserTitle>Multicurrency Payment Processing</TeaserTitle>
+            <TeaserDesc>
+              Efficiency of Clickhouse, processing more than 5 mln events per month
+            </TeaserDesc>
+            <TeaserReadMore>
+              <Link to="/cappasity">Read More</Link>
+            </TeaserReadMore>
+          </PaymentsTeaserTextBlock>
         </CardContents>
-      </HeightContainer>
-      <HeightContainer>
+      </TeaserBlock>
+      <TeaserBlock>
         <CardContents>
-          <ResponsiveBackgroundImage
+          <TeaserBackgroundImage
             imageLg={data.section2Image}
-            imageMd={data.section2ImageMd}
-            alignLg="center"
-            alignMd="right"
+            imageMd={data.section2Image}
+            imageSm={data.section2ImageSm}
+            imageXs={data.section2ImageXs}
+            alignLg="left"
+            alignMd="left"
+            alignSm="center"
+            alignXs="left"
           />
-          <StyledSideBlock>
-            <h3>Radio FX</h3>
-            <SubHeader>
-              iOS & Android apps,
-              <br />
-              Cloud platform, design
-            </SubHeader>
-            <Desc>
-              Delivering the power of social radio to college stations through their very own custom
-              mobile app experience.
-            </Desc>
-          </StyledSideBlock>
+          <TeaserTextBlock>
+            <TeaserTitle>High Volume Analytical System</TeaserTitle>
+            <TeaserDesc>
+              Efficiency of Clickhouse, processing more than 5 mln events per month
+            </TeaserDesc>
+          </TeaserTextBlock>
         </CardContents>
-      </HeightContainer>
+      </TeaserBlock>
       <HeightContainer>
         <CardContents>
           <ResponsiveBackgroundImage
@@ -366,6 +450,34 @@ export const query = graphql`
       }
     }
   }
+  fragment teaserImage on File {
+    childImageSharp {
+      fixed(width: 1280, height: 700, quality: 90) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment teaserImageMd on File {
+    childImageSharp {
+      fixed(width: 960, height: 700, quality: 90) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment teaserImageSm on File {
+    childImageSharp {
+      fixed(width: 720, height: 812, quality: 90) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+  fragment teaserImageXs on File {
+    childImageSharp {
+      fixed(width: 414, height: 896, quality: 90) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
 
   query IndexData {
     introImage: file(relativePath: { eq: "work_intro.jpg" }) {
@@ -375,26 +487,27 @@ export const query = graphql`
       ...basicMdNorthImage
     }
 
-    section1Image: file(relativePath: { eq: "work_cappasity.jpg" }) {
-      ...basicImage
+    section1Image: file(relativePath: { eq: "payment_xl.jpg" }) {
+      ...teaserImage
     }
-    section1ImageMd: file(relativePath: { eq: "work_cappasity_md.jpg" }) {
-      childImageSharp {
-        fixed(width: 960, height: 520, quality: 85, cropFocus: EAST) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+    section1ImageMd: file(relativePath: { eq: "payment_md.jpg" }) {
+      ...teaserImageMd
+    }
+    section1ImageSm: file(relativePath: { eq: "payment_sm.jpg" }) {
+      ...teaserImageSm
+    }
+    section1ImageXs: file(relativePath: { eq: "payment_xs.jpg" }) {
+      ...teaserImageXs
     }
 
-    section2Image: file(relativePath: { eq: "work_radio.jpg" }) {
-      ...basicImage
+    section2Image: file(relativePath: { eq: "analytical_system.png" }) {
+      ...teaserImage
     }
-    section2ImageMd: file(relativePath: { eq: "work_radio_md.jpg" }) {
-      childImageSharp {
-        fixed(width: 960, height: 520, quality: 85, cropFocus: NORTHEAST) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+    section2ImageSm: file(relativePath: { eq: "analytical_system_sm.png" }) {
+      ...teaserImageSm
+    }
+    section2ImageXs: file(relativePath: { eq: "analytical_system_xs.png" }) {
+      ...teaserImageXs
     }
 
     section3Image: file(relativePath: { eq: "work_microfleet.jpg" }) {

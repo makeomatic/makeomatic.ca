@@ -13,7 +13,7 @@ function alignImageCss(align?: Align) {
   }
 
   return css`
-    float: right;
+    float: ${align};
   `
 }
 
@@ -30,7 +30,7 @@ const StyledGatsbyImage = styled(GatsbyImage)<{ align?: Align }>`
   ${p => alignImageCss(p.align)};
 `
 
-export type Align = 'center' | 'right'
+export type Align = 'center' | 'right' | 'left'
 
 interface BackgroundImageProps {
   className?: string

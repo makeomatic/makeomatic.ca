@@ -162,6 +162,7 @@ const TeaserTextBlock = styled.div`
   justify-content: center;
   height: 100%;
   width: 470px;
+  font-family: 'Nunito Sans', sans-serif;
 
   ${p => p.theme.media.sm`
     width: 290px;
@@ -173,7 +174,6 @@ const TeaserTextBlock = styled.div`
 const TeaserTitle = styled.div`
   color: ${p => p.theme.colors.white};
   font-size: 56px;
-  font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
   line-height: 61px;
 

@@ -17,7 +17,7 @@ if (typeof window !== 'undefined') {
       families: [
         'Rozha One:400:latin',
         'Assistant:400,600,700:latin',
-        'Nunito Sans:800:latin',
+        'Nunito Sans:400,700,800:latin',
         'Merriweather:400:latin',
       ],
     },
@@ -74,4 +74,3 @@ export const Layout: React.FC<WrapperProps> = ({ children, invert }) => (
     </LayoutRoot>
   </ThemeProvider>
 )
-

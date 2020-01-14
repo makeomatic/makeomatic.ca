@@ -18,6 +18,10 @@ interface IndexPageProps {
   data: {
     introImage: SharpFixedImage
     introImageMd: SharpFixedImage
+    communicationsImage: SharpFixedImage
+    communicationsImageMd: SharpFixedImage
+    communicationsImageSm: SharpFixedImage
+    communicationsImageXs: SharpFixedImage
     section1Image: SharpFixedImage
     section1ImageMd: SharpFixedImage
     section1ImageSm: SharpFixedImage
@@ -264,7 +268,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignSm="left"
             alignXs="left"
           />
-          <PaymentsTeaserTextBlock>
+          <TeaserTextBlock>
             <TeaserTitle>Multicurrency Payment Processing</TeaserTitle>
             <TeaserDesc>
               Efficiency of Clickhouse, processing more than 5 mln events per month
@@ -272,6 +276,24 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             <TeaserReadMore>
               <Link to="/cappasity">Read More</Link>
             </TeaserReadMore>
+          </TeaserTextBlock>
+        </CardContents>
+      </TeaserBlock>
+      <TeaserBlock>
+        <CardContents>
+          <TeaserBackgroundImage
+            imageLg={data.communicationsImage}
+            imageMd={data.communicationsImageMd}
+            imageSm={data.communicationsImageSm}
+            imageXs={data.communicationsImageXs}
+            alignLg="center"
+            alignMd="center"
+            alignSm="center"
+            alignXs="center"
+          />
+          <PaymentsTeaserTextBlock>
+            <TeaserTitle>Real-time Communication Systems</TeaserTitle>
+            <TeaserDesc>Leveraging power of WebRTC on massive scale</TeaserDesc>
           </PaymentsTeaserTextBlock>
         </CardContents>
       </TeaserBlock>
@@ -487,26 +509,39 @@ export const query = graphql`
       ...basicMdNorthImage
     }
 
-    section1Image: file(relativePath: { eq: "payment_xl.jpg" }) {
+    communicationsImage: file(relativePath: { eq: "communications/xl.jpg" }) {
       ...teaserImage
     }
-    section1ImageMd: file(relativePath: { eq: "payment_md.jpg" }) {
+    communicationsImageMd: file(relativePath: { eq: "communications/md.jpg" }) {
       ...teaserImageMd
     }
-    section1ImageSm: file(relativePath: { eq: "payment_sm.jpg" }) {
+    communicationsImageSm: file(relativePath: { eq: "communications/sm.jpg" }) {
       ...teaserImageSm
     }
-    section1ImageXs: file(relativePath: { eq: "payment_xs.jpg" }) {
+    communicationsImageXs: file(relativePath: { eq: "communications/xs.jpg" }) {
       ...teaserImageXs
     }
 
-    section2Image: file(relativePath: { eq: "analytical_system.png" }) {
+    section1Image: file(relativePath: { eq: "payment/xl.jpg" }) {
       ...teaserImage
     }
-    section2ImageSm: file(relativePath: { eq: "analytical_system_sm.png" }) {
+    section1ImageMd: file(relativePath: { eq: "payment/md.jpg" }) {
+      ...teaserImageMd
+    }
+    section1ImageSm: file(relativePath: { eq: "payment/sm.jpg" }) {
       ...teaserImageSm
     }
-    section2ImageXs: file(relativePath: { eq: "analytical_system_xs.png" }) {
+    section1ImageXs: file(relativePath: { eq: "payment/xs.jpg" }) {
+      ...teaserImageXs
+    }
+
+    section2Image: file(relativePath: { eq: "analytical/xl.png" }) {
+      ...teaserImage
+    }
+    section2ImageSm: file(relativePath: { eq: "analytical/sm.png" }) {
+      ...teaserImageSm
+    }
+    section2ImageXs: file(relativePath: { eq: "analytical/xs.png" }) {
       ...teaserImageXs
     }
 

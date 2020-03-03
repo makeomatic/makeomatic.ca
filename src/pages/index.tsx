@@ -174,7 +174,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignLg="center"
             alignMd="right"
           />
-          <StyledSideBlock more="/cappasity">
+          <StyledSideBlock>
             <h3>Cappasity 3D</h3>
             <SubHeader>
               Cappasity Cloud platform,

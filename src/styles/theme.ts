@@ -1,6 +1,6 @@
-import { breakpoints, colors, dimensions, fonts, heights, widths } from './variables'
+import { colors, dimensions, fonts, heights, breakpoints } from './variables'
 import { media } from './mixins'
 
-export const theme = { breakpoints, colors, media, dimensions, fonts, heights, widths }
+export const theme = { breakpoints, colors, media, dimensions, fonts, heights }
 
 export interface ThemeInterface extends Readonly<typeof theme> {}

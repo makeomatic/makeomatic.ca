@@ -259,29 +259,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
       <TeaserBlock>
         <CardContents>
           <TeaserBackgroundImage
-            imageLg={data.section1Image}
-            imageMd={data.section1ImageMd}
-            imageSm={data.section1ImageSm}
-            imageXs={data.section1ImageXs}
-            alignLg="left"
-            alignMd="left"
-            alignSm="left"
-            alignXs="left"
-          />
-          <TeaserTextBlock>
-            <TeaserTitle>Multicurrency Payment Processing</TeaserTitle>
-            <TeaserDesc>
-              Efficiency of Clickhouse, processing more than 5 mln events per month
-            </TeaserDesc>
-            <TeaserReadMore>
-              <Link to="/cappasity">Read More</Link>
-            </TeaserReadMore>
-          </TeaserTextBlock>
-        </CardContents>
-      </TeaserBlock>
-      <TeaserBlock>
-        <CardContents>
-          <TeaserBackgroundImage
             imageLg={data.communicationsImage}
             imageMd={data.communicationsImageMd}
             imageSm={data.communicationsImageSm}
@@ -291,9 +268,32 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignSm="center"
             alignXs="center"
           />
-          <PaymentsTeaserTextBlock>
+          <TeaserTextBlock>
             <TeaserTitle>Real-time Communication Systems</TeaserTitle>
             <TeaserDesc>Leveraging power of WebRTC on massive scale</TeaserDesc>
+          </TeaserTextBlock>
+        </CardContents>
+      </TeaserBlock>
+      <TeaserBlock>
+        <CardContents>
+          <TeaserBackgroundImage
+            imageLg={data.section1Image}
+            imageMd={data.section1ImageMd}
+            imageSm={data.section1ImageSm}
+            imageXs={data.section1ImageXs}
+            alignLg="left"
+            alignMd="left"
+            alignSm="left"
+            alignXs="left"
+          />
+          <PaymentsTeaserTextBlock>
+            <TeaserTitle>Multicurrency Payment Processing</TeaserTitle>
+            <TeaserDesc>
+              Efficiency of Clickhouse, processing more than 5 mln events per month
+            </TeaserDesc>
+            <TeaserReadMore>
+              <Link to="/cappasity">Read More</Link>
+            </TeaserReadMore>
           </PaymentsTeaserTextBlock>
         </CardContents>
       </TeaserBlock>

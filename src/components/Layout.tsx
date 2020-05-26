@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { ThemeProvider } from '../styles/styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 

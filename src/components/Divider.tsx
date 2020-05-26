@@ -3,8 +3,8 @@ import styled from '../styles/styled-components'
 import { Container } from './Container'
 
 const StyledContainer = styled(Container)`
-  padding: ${p => p.theme.dimensions.containerPadding * 2}rem
-    ${p => p.theme.dimensions.containerPadding}rem;
+  padding: ${(p) => p.theme.dimensions.containerPadding * 2}rem
+    ${(p) => p.theme.dimensions.containerPadding}rem;
 
   h2 {
     letter-spacing: 1.22px;
@@ -21,7 +21,7 @@ const StyledContainer = styled(Container)`
     max-width: 800px;
   }
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     padding: 3rem 1rem;
     
     h2 {

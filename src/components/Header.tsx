@@ -23,14 +23,14 @@ const NavAnchor = styled.a`
 
 const StyledHeader = styled.header<{ invert?: boolean }>`
   height: 136px;
-  background-color: ${p => (p.invert ? p.theme.colors.white : 'inherit')};
-  color: ${p => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
+  background-color: ${(p) => (p.invert ? p.theme.colors.white : 'inherit')};
+  color: ${(p) => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
 
   & ${HeaderLink}, & ${NavAnchor} {
-    color: ${p => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
+    color: ${(p) => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
   }
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     height: auto;
   `};
 `
@@ -40,9 +40,9 @@ const HeaderInner = styled(Container)`
   flex-direction: row;
   align-items: center;
   height: 100%;
-  padding: ${p => p.theme.dimensions.containerPadding}rem;
+  padding: ${(p) => p.theme.dimensions.containerPadding}rem;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: block;
     padding: 2rem 1rem 1rem;
   `};
@@ -54,14 +54,14 @@ const LogoContainer = styled.div`
 `
 
 const StyledLogoIcon = styled(LogoIcon)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: none;
   `};
 `
 const StyledLogoIconMd = styled(LogoIconMd)`
   display: none;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: block;
   `};
 `
@@ -71,7 +71,7 @@ const Nav = styled.nav`
   flex-flow: row nowrap;
   font-size: 1.125rem;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     width: 100%;
     overflow-x: auto;
     display: block;

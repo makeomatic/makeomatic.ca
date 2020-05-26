@@ -25,11 +25,11 @@ const LeftSideBlock = styled(StyledSideBlock)`
     z-index: 1;
   }
 
-  ${p => p.theme.media.lg`
+  ${(p) => p.theme.media.lg`
     width: 27.875rem;
   `};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     width: auto;
     height: auto;
 
@@ -47,12 +47,12 @@ const LeftSideBlock = styled(StyledSideBlock)`
 const RightSideBlock = styled(LeftSideBlock)`
   margin: 0 0 0 auto;
 
-  ${p => p.theme.media.lg`
-    padding-left: ${t => t.theme.dimensions.containerPadding}rem;
-    padding-right: ${t => t.theme.dimensions.containerPadding * 3}rem;
+  ${(p) => p.theme.media.lg`
+    padding-left: ${(t) => t.theme.dimensions.containerPadding}rem;
+    padding-right: ${(t) => t.theme.dimensions.containerPadding * 3}rem;
   `};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     padding-left: 1rem;
     padding-right: 1rem;
   `};
@@ -75,7 +75,7 @@ const RightSideBlockGeometry = styled(RightSideBlock)`
     right: 0;
     background-color: #4e4e4e;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       left: 80%;
     `};
   }
@@ -103,20 +103,20 @@ const CallToActionGeometry = styled(CallToAction)`
     background-color: #4e4e4e;
     z-index: 0;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       display: none;
     `};
   }
 `
 
 const StyledHeightContainer = styled(HeightContainer)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     height: auto;
   `};
 `
 
 const StyledBackgroundImage = styled(ResponsiveBackgroundImage)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     position: relative;
     height: ${getEmSize(520)}rem;
     overflow: hidden;
@@ -124,7 +124,7 @@ const StyledBackgroundImage = styled(ResponsiveBackgroundImage)`
 `
 
 const BlockHeader = styled.div`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     margin-top: 2rem;
 
     svg {
@@ -138,7 +138,7 @@ const BlockHeader = styled.div`
 const Br = styled.span`
   display: block;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: inline;
 
     &::after {

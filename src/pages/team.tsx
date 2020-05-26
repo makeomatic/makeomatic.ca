@@ -59,7 +59,7 @@ const DividerGeometry = styled(Divider)`
     background-color: #646464;
     z-index: -2;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       height: 30%;
       width: 40%;
     `};
@@ -75,7 +75,7 @@ const DividerGeometry = styled(Divider)`
     background-color: rgba(255, 255, 255, 0.15);
     z-index: -1;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       width: 20%;
       bottom: 0;
     `};
@@ -83,14 +83,14 @@ const DividerGeometry = styled(Divider)`
 `
 
 const StyledHeightContainer = styled(HeightContainer)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     flex-direction: column;
     height: ${getEmSize(1040)}rem;
   `};
 `
 
 const StyledReverseHeightContainer = styled(StyledHeightContainer)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     flex-direction: column-reverse;
   `};
 `

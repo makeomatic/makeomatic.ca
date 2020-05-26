@@ -8,13 +8,13 @@ import { ReactComponent as BehanceIcon } from '../assets/svg/icon_behance.svg'
 import { getEmSize } from '../styles/mixins'
 
 const StyledContactsContainer = styled.section`
-  background-color: ${p => p.theme.colors.white};
-  color: ${p => p.theme.colors.black};
+  background-color: ${(p) => p.theme.colors.white};
+  color: ${(p) => p.theme.colors.black};
 `
 
 const StyledContacts = styled(Container)`
-  padding: ${p => p.theme.dimensions.containerPadding * 1.5}rem
-    ${p => p.theme.dimensions.containerPadding}rem;
+  padding: ${(p) => p.theme.dimensions.containerPadding * 1.5}rem
+    ${(p) => p.theme.dimensions.containerPadding}rem;
 
   display: flex;
   justify-content: space-between;
@@ -23,11 +23,11 @@ const StyledContacts = styled(Container)`
   font-weight: 500;
 
   a {
-    color: ${p => p.theme.colors.black};
+    color: ${(p) => p.theme.colors.black};
   }
 
-  ${p => p.theme.media.md`
-    padding: ${t => t.theme.dimensions.containerPadding}rem 1rem;
+  ${(p) => p.theme.media.md`
+    padding: ${(t) => t.theme.dimensions.containerPadding}rem 1rem;
     flex-direction: column;
     font-size: 1.375rem;
     max-width: ${getEmSize(400)}rem; 
@@ -35,9 +35,9 @@ const StyledContacts = styled(Container)`
 `
 
 const StyledLogoIcon = styled(LogoIcon)`
-  color: ${p => p.theme.colors.black};
+  color: ${(p) => p.theme.colors.black};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: none;
   `};
 `
@@ -49,7 +49,7 @@ const Address = styled.address`
     margin-bottom: 0;
   }
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     order: 1;
     margin: 2rem auto;
     text-align: center;
@@ -60,7 +60,7 @@ const Links = styled.div`
   font-weight: 600;
   text-transform: uppercase;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     order: 0;
     width: 100%;
     display: flex;
@@ -81,7 +81,7 @@ const Social = styled.div`
   flex-wrap: nowrap;
   justify-content: center;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
@@ -91,7 +91,7 @@ const Social = styled.div`
     width: 1.2em;
     height: 1.2em;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       width: 2.375rem;
       height: 2.375rem;
     `};
@@ -99,7 +99,7 @@ const Social = styled.div`
     &:last-child {
       margin-top: 1.5rem;
 
-      ${p => p.theme.media.md`
+      ${(p) => p.theme.media.md`
         margin-top: 0;
       `};
     }

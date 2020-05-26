@@ -7,7 +7,7 @@ const StyledContainer = styled.div<{ invert?: boolean }>`
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  color: ${p => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
+  color: ${(p) => (p.invert ? p.theme.colors.black : p.theme.colors.white)};
 
   p {
     margin-top: 0.75rem;

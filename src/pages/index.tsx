@@ -43,21 +43,21 @@ interface IndexPageProps {
 }
 
 const InvertMdHeader = styled.h3`
-  ${p => p.theme.media.md`
-    color: ${t => t.theme.colors.black};
+  ${(p) => p.theme.media.md`
+    color: ${(t) => t.theme.colors.black};
   `};
 `
 const SubHeader = styled.p`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: none;
   `};
 `
 const Desc = styled.div`
   margin-top: 0.25rem;
   font-size: 1.125rem;
-  color: ${p => p.theme.colors.gray.desc};
+  color: ${(p) => p.theme.colors.gray.desc};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: none;
   `};
 `
@@ -67,7 +67,7 @@ const TransparentSideBlock = styled(StyledSideBlock)`
 `
 
 const BlackTransparentSideBlock = styled(TransparentSideBlock)`
-  color: ${p => p.theme.colors.black};
+  color: ${(p) => p.theme.colors.black};
 `
 
 const GeometryDividerContainer = styled.div`
@@ -98,7 +98,7 @@ const GeometryDivider = styled(Divider)`
     background: linear-gradient(45deg, #202020 0%, #202020 90%, transparent 90%, transparent 100%);
     z-index: 0;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       width: 100%;
       background: linear-gradient(45deg, #202020 0%, #202020 70%, transparent 70%, transparent 100%);
     `};
@@ -116,7 +116,7 @@ const GeometryDivider = styled(Divider)`
     background: linear-gradient(135deg, transparent 0%, transparent 50%, #414141 50%, #414141 100%);
     z-index: 1;
 
-    ${p => p.theme.media.md`
+    ${(p) => p.theme.media.md`
       width: 50%;
       background: linear-gradient(135deg, transparent 0%, transparent 75%, #414141 75%, #414141 100%);
     `};
@@ -124,14 +124,14 @@ const GeometryDivider = styled(Divider)`
 `
 
 const StyledHeightContainer = styled(HeightContainer)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: block;
     height: ${getEmSize(1040)}em;
   `};
 `
 
 const StyledCardContents = styled(CardContents)`
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     height: ${getEmSize(520)}em;
   `};
 `
@@ -139,7 +139,7 @@ const StyledCardContents = styled(CardContents)`
 const ArtuneSideBlock = styled(StyledSideBlock)`
   background-color: #191919;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     background-color: transparent;
   `};
 `
@@ -151,10 +151,10 @@ const ArtuneSideBlock = styled(StyledSideBlock)`
 const TeaserBlock = styled(HeightContainer)`
   height: ${getEmSize(700)}em;
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     height: ${getEmSize(812)}em;
   `};
-  ${p => p.theme.media.xs`
+  ${(p) => p.theme.media.xs`
     height: ${getEmSize(896)}em;
   `};
 `
@@ -168,7 +168,7 @@ const TeaserTextBlock = styled.div`
   width: 470px;
   font-family: 'Nunito Sans', sans-serif;
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     width: 290px;
     justify-content: flex-start;
     margin-left: 16px;
@@ -176,12 +176,12 @@ const TeaserTextBlock = styled.div`
   `};
 `
 const TeaserTitle = styled.div`
-  color: ${p => p.theme.colors.white};
+  color: ${(p) => p.theme.colors.white};
   font-size: 56px;
   font-weight: 800;
   line-height: 61px;
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     font-size: 34px;
     line-height: 45px;
   `};
@@ -192,7 +192,7 @@ const TeaserDesc = styled.div`
   font-weight: normal;
   margin-top: 40px;
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     margin-top: 20px;
     font-size: 22px;
     line-height: 28px;
@@ -208,7 +208,7 @@ const TeaserReadMore = styled.div`
     text-decoration: underline;
   }
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     font-size: 22px;
     margin-top: 20px;
   `};
@@ -219,7 +219,7 @@ const TeaserReadMore = styled.div`
 const PaymentsTeaserTextBlock = styled(TeaserTextBlock)`
   padding-top: 70px;
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     padding-top: 0;
   `};
 `

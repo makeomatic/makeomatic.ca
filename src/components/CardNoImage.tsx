@@ -12,13 +12,13 @@ const Contents = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 ${p => p.theme.dimensions.containerPadding * 2.5}rem;
+  padding: 0 ${(p) => p.theme.dimensions.containerPadding * 2.5}rem;
 
-  ${p => p.theme.media.lg`
-    padding: 0 ${t => t.theme.dimensions.containerPadding}rem;
+  ${(p) => p.theme.media.lg`
+    padding: 0 ${(t) => t.theme.dimensions.containerPadding}rem;
   `};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     padding: 0 1rem;
   `};
 

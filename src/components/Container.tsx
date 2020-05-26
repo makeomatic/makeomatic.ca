@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: auto;
-  max-width: ${p => getEmSize(p.theme.breakpoints.xl)}rem;
+  max-width: ${(p) => getEmSize(p.theme.breakpoints.xl)}rem;
 `
 
 interface ContainerProps {

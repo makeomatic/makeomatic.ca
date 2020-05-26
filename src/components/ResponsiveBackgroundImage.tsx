@@ -5,14 +5,14 @@ import { Align, BackgroundImage } from './BackgroundImage'
 export const BackgroundImageLg = styled(BackgroundImage)`
   display: block;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: none;
   `};
 `
 export const BackgroundImageMd = styled(BackgroundImage)`
   display: none;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     display: block;
   `};
 `

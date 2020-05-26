@@ -4,24 +4,24 @@ import { Align, BackgroundImage } from './BackgroundImage'
 import { BackgroundImageLg, BackgroundImageMd } from './ResponsiveBackgroundImage'
 
 const BackgroundImageOnlyMd = styled(BackgroundImageMd)`
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     display: none;
   `};
 `
 export const BackgroundImageOnlySm = styled(BackgroundImage)`
   display: none;
 
-  ${p => p.theme.media.sm`
+  ${(p) => p.theme.media.sm`
     display: block;
   `};
-  ${p => p.theme.media.xs`
+  ${(p) => p.theme.media.xs`
     display: none;
   `};
 `
 export const BackgroundImageXs = styled(BackgroundImage)`
   display: none;
 
-  ${p => p.theme.media.xs`
+  ${(p) => p.theme.media.xs`
     display: block;
   `};
 `

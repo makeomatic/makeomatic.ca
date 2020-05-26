@@ -12,7 +12,7 @@ const Contents = styled.div`
   width: 100%;
   height: ${getEmSize(700)}em;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     height: ${getEmSize(520)}em;
   `};
 `

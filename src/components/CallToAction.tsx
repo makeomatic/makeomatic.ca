@@ -7,7 +7,7 @@ export const CallToAction = styled(Divider)`
   }
 
   strong {
-    color: ${p => p.theme.colors.white};
+    color: ${(p) => p.theme.colors.white};
     // text-decoration: underline;
   }
 `

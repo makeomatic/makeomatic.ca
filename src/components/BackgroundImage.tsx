@@ -27,7 +27,7 @@ const BackgroundImageContainer = styled.div`
 `
 
 const StyledGatsbyImage = styled(GatsbyImage)<{ align?: Align }>`
-  ${p => alignImageCss(p.align)};
+  ${(p) => alignImageCss(p.align)};
 `
 
 export type Align = 'center' | 'right' | 'left'

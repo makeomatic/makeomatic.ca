@@ -48,16 +48,16 @@ export const StyledSideBlock = styled(SideBlock)`
   flex-direction: column;
   flex-wrap: nowrap;
   background-color: #000;
-  padding: ${p => p.theme.dimensions.containerPadding}rem;
+  padding: ${(p) => p.theme.dimensions.containerPadding}rem;
   width: 20rem;
   height: 100%;
   margin: 0 auto 0 0;
 
-  ${p => p.theme.media.lg`
+  ${(p) => p.theme.media.lg`
     width: 26rem;
   `};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     width: auto;
     padding: 1rem;
     background-color: transparent;

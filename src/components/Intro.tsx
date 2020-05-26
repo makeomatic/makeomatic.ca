@@ -7,9 +7,9 @@ const IntroContainer = styled(HeightContainer)`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: ${p => p.theme.dimensions.containerPadding}rem;
+  padding: ${(p) => p.theme.dimensions.containerPadding}rem;
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     padding: 1rem;
   `};
 `
@@ -23,7 +23,7 @@ const Contents = styled.div`
     letter-spacing: 0.38px;
   }
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     h1 {
       font-size: 2.75rem;
     }

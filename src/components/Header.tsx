@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ invert }) => (
         </HeaderLink>
       </LogoContainer>
       <Nav>
-        <NavLink to="/">Work</NavLink>
+        <NavLink to="/work">Work</NavLink>
         <NavLink to="/team">About</NavLink>
         <NavLink to="/process">Our process</NavLink>
         <NavAnchor href="#contacts">Get in touch</NavAnchor>

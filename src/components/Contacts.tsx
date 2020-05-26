@@ -30,7 +30,7 @@ const StyledContacts = styled(Container)`
     padding: ${(t) => t.theme.dimensions.containerPadding}rem 1rem;
     flex-direction: column;
     font-size: 1.375rem;
-    max-width: ${getEmSize(400)}rem; 
+    max-width: ${getEmSize(400)}rem;
   `};
 `
 
@@ -114,7 +114,9 @@ export const Contacts: React.FC<{}> = () => (
         <p>
           +1 (236) 777 41 46
           <br />
-          info@makeomatic.ca
+          <a href="mailto:info@makeomatic.ca" target="_blank" rel="noopener noreferrer">
+            info@makeomatic.ca
+          </a>
         </p>
         <p>
           602 Citadel Parade,

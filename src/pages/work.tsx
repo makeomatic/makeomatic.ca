@@ -165,6 +165,8 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
               Bring an in-store browsing experience to online retail with Cappasity, the first
               complete 3D product imaging solution for your website, mobile app, VR and AR
               applications.
+              <br />
+              <Link to="/cappasity">Read more</Link>
             </Desc>
           </StyledSideBlock>
         </CardContents>

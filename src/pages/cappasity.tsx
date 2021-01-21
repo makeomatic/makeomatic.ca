@@ -152,7 +152,7 @@ const CappasityPage: React.FC<CappasityPageProps> = ({ data }) => (
           <p>
             Working together for 6 years, we’ve got accepted to the top Plug and Play retail
             accelerator. We went further with Blockchain technology and released utility to the
-            market. Our clients include Samsonite, Lacoste, American Greetings.
+            market.
           </p>
         </IntroContents>
         <StyledBackgroundImage image={data.introImage} align="center" />

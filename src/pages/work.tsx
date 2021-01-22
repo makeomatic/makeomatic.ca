@@ -36,11 +36,14 @@ const InvertMdHeader = styled.h3`
     color: ${(t) => t.theme.colors.black};
   `};
 `
-const SubHeader = styled.p`
+const SubHeader = styled.p``
+
+const InvertedMdSubHeader = styled.p`
   ${(p) => p.theme.media.md`
-    display: none;
+    color: ${(t) => t.theme.colors.black};
   `};
 `
+
 const Desc = styled.div`
   margin-top: 0.25rem;
   font-size: 1.125rem;
@@ -203,11 +206,11 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
           />
           <StyledSideBlock>
             <InvertMdHeader>Microfleet</InvertMdHeader>
-            <SubHeader>
+            <InvertedMdSubHeader>
               Node.js
               <br />
               Microservices Toolkit
-            </SubHeader>
+            </InvertedMdSubHeader>
             <Desc>
               Opinionated framework with simple, flexible, scalable and resilent prebuilt
               microservices that glue together like lego blocks.

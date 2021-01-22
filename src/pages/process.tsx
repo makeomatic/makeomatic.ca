@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '../styles/styled-components'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Page } from '../components/Page'
 import { Intro } from '../components/Intro'
@@ -283,7 +283,11 @@ const ProcessPage: React.FC<ProcessPageProps> = ({ data }) => (
       <CallToActionGeometryContainer>
         <CallToActionGeometry>
           <h2>
-            Read <strong>the Cappasity</strong> project overview to see our process in action
+            Read{' '}
+            <strong>
+              the <Link to="/cappasity">Cappasity</Link>
+            </strong>{' '}
+            project overview to see our process in action
           </h2>
         </CallToActionGeometry>
       </CallToActionGeometryContainer>

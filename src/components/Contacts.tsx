@@ -125,7 +125,7 @@ export const Contacts: React.FC<{}> = () => (
         </p>
       </Address>
       <Links>
-        <StyledLink to="/">Work</StyledLink>
+        <StyledLink to="/work">Work</StyledLink>
         <StyledLink to="/team">About</StyledLink>
         <StyledLink to="/process">Process</StyledLink>
       </Links>
@@ -133,7 +133,7 @@ export const Contacts: React.FC<{}> = () => (
         <a href="https://github.com/makeomatic" rel="noopener noreferrer" target="github">
           <GithubIcon />
         </a>
-        <a href="https://www.behance.net/talamasca" rel="noopener noreferrer" target="behance">
+        <a href="https://www.behance.net/amineva_design" rel="noopener noreferrer" target="behance">
           <BehanceIcon />
         </a>
       </Social>

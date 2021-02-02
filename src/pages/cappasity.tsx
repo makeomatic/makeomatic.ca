@@ -20,32 +20,33 @@ type CappasityPageProps = {
 }
 
 const StyledPage = styled(Page)`
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${(p) => p.theme.colors.white};
 `
 const StyledIntro = styled(HeightContainer)`
   height: 496px;
   overflow: visible;
-  color: ${p => p.theme.colors.black};
+  color: ${(p) => p.theme.colors.black};
   padding: 6.25rem 12.5rem 0;
 
-  ${p => p.theme.media.lg`
+  ${(p) => p.theme.media.lg`
     height: auto;
   `};
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.md`
     padding: 3rem 1rem 0;
   `};
 `
 const IntroContents = styled.div`
   position: relative;
   z-index: 2;
-  max-width: 33.8rem;
+  max-width: 28rem;
 
   h2 {
     font-family: 'Nunito Sans';
     font-weight: 800;
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     margin-bottom: 2.5rem;
+    white-space: pre;
   }
 
   p {
@@ -53,8 +54,12 @@ const IntroContents = styled.div`
     font-size: 1.375rem;
   }
 
-  ${p => p.theme.media.md`
+  ${(p) => p.theme.media.lg`
+    h2 {
+      white-space: normal;
+    }
 
+    max-width: none;
   `};
 `
 const StyledIframe = styled.iframe`
@@ -138,11 +143,7 @@ const CappasityPage: React.FC<CappasityPageProps> = ({ data }) => (
     <StyledPage>
       <StyledIntro>
         <IntroContents>
-          <h2>
-            Long-term digital
-            <br />
-            partners
-          </h2>
+          <h2>Long-term digital{'\n'}partners</h2>
           <StyledIframe
             width="368px"
             height="270px"
@@ -152,7 +153,7 @@ const CappasityPage: React.FC<CappasityPageProps> = ({ data }) => (
           <p>
             Working together for 6 years, we’ve got accepted to the top Plug and Play retail
             accelerator. We went further with Blockchain technology and released utility to the
-            market.
+            market. Our clients include Samsonite, Lacoste, American Greetings.
           </p>
         </IntroContents>
         <StyledBackgroundImage image={data.introImage} align="center" />

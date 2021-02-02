@@ -136,6 +136,20 @@ const ArtuneSideBlock = styled(StyledSideBlock)`
   `};
 `
 
+const ReadMore = styled.div`
+  margin-top: 40px;
+  font-weight: 700;
+  line-height: 28px;
+
+  & a {
+    text-decoration: underline;
+  }
+
+  ${(p) => p.theme.media.sm`
+    margin-top: 20px;
+  `};
+`
+
 const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
   <Layout>
     <Page>
@@ -169,7 +183,9 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
               complete 3D product imaging solution for your website, mobile app, VR and AR
               applications.
               <br />
-              <Link to="/cappasity">Read more</Link>
+              <ReadMore>
+                <Link to="/cappasity">Read more</Link>
+              </ReadMore>
             </Desc>
           </StyledSideBlock>
         </CardContents>

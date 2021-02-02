@@ -85,21 +85,6 @@ const TeaserDesc = styled.div`
     line-height: 28px;
   `};
 `
-const TeaserReadMore = styled.div`
-  margin-top: 40px;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 28px;
-
-  & a {
-    text-decoration: underline;
-  }
-
-  ${(p) => p.theme.media.sm`
-    font-size: 22px;
-    margin-top: 20px;
-  `};
-`
 
 // specific classes
 

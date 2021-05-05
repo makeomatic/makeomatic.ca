@@ -222,7 +222,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             <TeaserDesc>Flexible management of services at scale</TeaserDesc>
           </K8sTeaserTextBlock>
           <K8sVideoBlock>
-            <video src={K8sVideo} type="video/mp4" autoPlay muted loop />
+            <video src={K8sVideo} type="video/mp4" autoPlay playsInline muted="true" loop />
           </K8sVideoBlock>
         </CardContents>
       </TeaserBlock>

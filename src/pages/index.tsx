@@ -12,6 +12,7 @@ import { CallToAction } from '../components/CallToAction'
 import { ResponsiveBackgroundImage } from '../components/ResponsiveBackgroundImage'
 import { getEmSize } from '../styles/mixins'
 import { TeaserBackgroundImage } from '../components/TeaserBackgroundImage'
+import K8sVideo from '../assets/video/k8s.mp4'
 
 interface IndexPageProps {
   data: {
@@ -21,6 +22,9 @@ interface IndexPageProps {
     communicationsImageMd: SharpFixedImage
     communicationsImageSm: SharpFixedImage
     communicationsImageXs: SharpFixedImage
+    k8sImage: SharpFixedImage
+    k8sImageMd: SharpFixedImage
+    k8sImageXs: SharpFixedImage
     section1Image: SharpFixedImage
     section1ImageMd: SharpFixedImage
     section1ImageSm: SharpFixedImage
@@ -37,6 +41,7 @@ interface IndexPageProps {
 
 const TeaserBlock = styled(HeightContainer)`
   height: ${getEmSize(700)}em;
+  z-index: 1;
 
   ${(p) => p.theme.media.sm`
     height: ${getEmSize(812)}em;
@@ -67,6 +72,7 @@ const TeaserTitle = styled.div`
   font-size: 56px;
   font-weight: 800;
   line-height: 61px;
+  z-index: 1;
 
   ${(p) => p.theme.media.sm`
     font-size: 34px;
@@ -78,6 +84,7 @@ const TeaserDesc = styled.div`
   line-height: 36px;
   font-weight: normal;
   margin-top: 40px;
+  z-index: 1;
 
   ${(p) => p.theme.media.sm`
     margin-top: 20px;
@@ -94,6 +101,58 @@ const PaymentsTeaserTextBlock = styled(TeaserTextBlock)`
   ${(p) => p.theme.media.sm`
     padding-top: 0;
   `};
+`
+
+const K8sTeaserTextBlock = styled(TeaserTextBlock)`
+  ${(p) => p.theme.media.sm`
+    width: auto;
+    margin-top: 70px;
+    margin-right: 16px;
+  `};
+
+  & > ${TeaserTitle} {
+    width: 260px;
+  }
+`
+
+const K8sVideoBlock = styled.div`
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  z-index: 0;
+
+  ${(p) => p.theme.media.md`
+    right: -230px;
+  `};
+
+  ${(p) => p.theme.media.sm`
+    top: 203px;
+    right: auto;
+    left: calc(50vw - 923px/2);
+  `};
+
+  ${(p) => p.theme.media.xs`
+    top: auto;
+    bottom: 70px;
+    left: calc(50vw - 727px/2);
+  `};
+
+  & > video {
+    object-fit: contain;
+    width: 932px;
+    height: 700px;
+
+    ${(p) => p.theme.media.md`
+      width: 923px;
+      height: 693px;
+    `};
+
+    ${(p) => p.theme.media.xs`
+      width: 727px;
+      height: 546px;
+    `};
+  }
 `
 
 // end teaser blocks
@@ -144,6 +203,27 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             <TeaserTitle>Real-time Communication Systems</TeaserTitle>
             <TeaserDesc>Leveraging power of WebRTC on massive scale</TeaserDesc>
           </TeaserTextBlock>
+        </CardContents>
+      </TeaserBlock>
+      <TeaserBlock>
+        <CardContents>
+          <TeaserBackgroundImage
+            imageLg={data.k8sImage}
+            imageMd={data.k8sImageMd}
+            imageSm={data.k8sImageMd}
+            imageXs={data.k8sImageXs}
+            alignLg="center"
+            alignMd="center"
+            alignSm="center"
+            alignXs="center"
+          />
+          <K8sTeaserTextBlock>
+            <TeaserTitle>Kubernetes. Container Management</TeaserTitle>
+            <TeaserDesc>Flexible management of services at scale</TeaserDesc>
+          </K8sTeaserTextBlock>
+          <K8sVideoBlock>
+            <video src={K8sVideo} type="video/mp4" autoPlay muted loop />
+          </K8sVideoBlock>
         </CardContents>
       </TeaserBlock>
       <TeaserBlock>
@@ -243,6 +323,16 @@ export const query = graphql`
       ...teaserImageSm
     }
     communicationsImageXs: file(relativePath: { eq: "communications/xs.jpg" }) {
+      ...teaserImageXs
+    }
+
+    k8sImage: file(relativePath: { eq: "k8s/md.jpg" }) {
+      ...teaserImage
+    }
+    k8sImageMd: file(relativePath: { eq: "k8s/md.jpg" }) {
+      ...teaserImageMd
+    }
+    k8sImageXs: file(relativePath: { eq: "k8s/xs.jpg" }) {
       ...teaserImageXs
     }
 

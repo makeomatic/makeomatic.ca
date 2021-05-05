@@ -1,0 +1,40 @@
+backend:
+  name: github
+  branch: master
+  repo: aleksxor/test-netlify
+
+publish_mode: editorial_workflow
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Work"
+        name: "work"
+        file: "contents/work.yml"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Header", name: "header", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - label: "Card"
+            name: "card"
+            widget: "list"
+            fields:
+              - { label: "Background image", name: "bg-image", widget: "image" }
+              - { label: "Header", name: "header", widget: "string" }
+              - { label: "Half width card", name: "half", widget: "boolean" }
+
+      - label: "Team"
+        name: "team"
+        file: "contents/team.yml"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+
+      - label: "Process"
+        name: "process"
+        file: "contents/process.yml"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }

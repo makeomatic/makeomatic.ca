@@ -143,7 +143,7 @@ const CappasityPage: React.FC<CappasityPageProps> = ({ data }) => (
     <StyledPage>
       <StyledIntro>
         <IntroContents>
-          <h2>Health app that{'\n'}never existed befor</h2>
+          <h2>Health app that{'\n'}never existed before</h2>
           <StyledIframe
             width="368px"
             height="270px"

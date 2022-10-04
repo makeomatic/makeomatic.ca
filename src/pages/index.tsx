@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from '../styles/styled-components'
-
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Page } from '../components/Page'
@@ -163,12 +162,12 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
       <Intro
         header={
           <span>
-            Ideas
-            <br />
-            Turned Products
+            High Load Services
           </span>
         }
-        text="Makeomatic is your long-term web development and design partner specializing in creating high-load interactive applications."
+        text="Makeomatic is your long-term 
+        web development and design partner 
+        specializing in creating high-load interactive applications"
       >
         <ResponsiveBackgroundImage
           imageLg={data.introImage}
@@ -182,9 +181,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
         <p>
           Whether you have a business plan, sketch or just a few ideas about the product you'd like
           to create, <Link to="/process">we work with you</Link> from that point onwards, all the
-          way through validating your market assumption, designing an optimal solution and
-          developing a prototype to be tested and iterated upon based on the feedback from the
-          market until it becomes a sustainable product.
+          way through validating your market fit, designing an optimal solution and
+          developing a prototype to be tested and iterated based on the feedback from the
+          users until it becomes a sustainable product
         </p>
       </Divider>
       <TeaserBlock>
@@ -200,8 +199,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignXs="center"
           />
           <TeaserTextBlock>
-            <TeaserTitle>Real-time Communication Systems</TeaserTitle>
-            <TeaserDesc>Leveraging power of WebRTC on massive scale</TeaserDesc>
+            <TeaserTitle>Efficient Communication Between Internal Services</TeaserTitle>
+            <TeaserDesc>
+              Leveraging power of messaging broker on massive scale
+            </TeaserDesc>
           </TeaserTextBlock>
         </CardContents>
       </TeaserBlock>
@@ -218,11 +219,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignXs="center"
           />
           <K8sTeaserTextBlock>
-            <TeaserTitle>Kubernetes. Container Management</TeaserTitle>
-            <TeaserDesc>Flexible management of services at scale</TeaserDesc>
+            <TeaserTitle>Kubernetes Orchestration System</TeaserTitle>
+            <TeaserDesc>Automated deployment and scaling</TeaserDesc>
           </K8sTeaserTextBlock>
           <K8sVideoBlock>
-            <video src={K8sVideo} type="video/mp4" autoPlay playsInline muted="true" loop />
+            <video autoPlay playsInline muted loop>
+              <source src={K8sVideo} type="video/mp4"></source>
+            </video>
           </K8sVideoBlock>
         </CardContents>
       </TeaserBlock>
@@ -239,9 +242,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             alignXs="left"
           />
           <PaymentsTeaserTextBlock>
-            <TeaserTitle>Multicurrency Payment Processing</TeaserTitle>
+            <TeaserTitle>Node.JS Performance Benchmarking and Analysis</TeaserTitle>
             <TeaserDesc>
-              Efficiency of Clickhouse, processing more than 5 mln events per month
+              Solving performance problems with great efficiency
             </TeaserDesc>
           </PaymentsTeaserTextBlock>
         </CardContents>
@@ -261,7 +264,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           <TeaserTextBlock>
             <TeaserTitle>High Volume Analytical System</TeaserTitle>
             <TeaserDesc>
-              Efficiency of Clickhouse, processing more than 5 mln events per month
+              Process more than 100.000 data points per second and run analytical queries in near real time
             </TeaserDesc>
           </TeaserTextBlock>
         </CardContents>
@@ -306,11 +309,11 @@ export const query = graphql`
   }
 
   query IndexData {
-    introImage: file(relativePath: { eq: "work_intro.jpg" }) {
+    introImage: file(relativePath: { eq: "makeomatic_main.png" }) {
       ...basicImage
     }
-    introImageMd: file(relativePath: { eq: "work_intro_md.jpg" }) {
-      ...basicMdNorthImage
+    introImageMd: file(relativePath: { eq: "makeomatic_main_md.jpg" }) {
+      ...basicMdIntroImage
     }
 
     communicationsImage: file(relativePath: { eq: "communications/xl.jpg" }) {

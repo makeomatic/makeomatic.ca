@@ -146,7 +146,11 @@ const ReadMore = styled.div`
   }
 
   ${(p) => p.theme.media.sm`
-    margin-top: 20px;
+    margin-top: 0px;
+    & a {
+      color: #000000;
+      font-size: 1.125rem;
+    }  
   `};
 `
 
@@ -172,43 +176,46 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
             alignMd="right"
           />
           <StyledSideBlock>
-            <h3>Cappasity 3D</h3>
-            <SubHeader>
+            <InvertMdHeader>Cappasity 3D</InvertMdHeader>
+            <InvertedMdSubHeader>
               Cappasity Cloud platform,
               <br />
               Cappasity Blockchain
-            </SubHeader>
+              </InvertedMdSubHeader>
             <Desc>
               Bring an in-store browsing experience to online retail with Cappasity, the first
               complete 3D product imaging solution for your website, mobile app, VR and AR
               applications.
-              <br />
-              <ReadMore>
+            </Desc>
+            <ReadMore>
                 <Link to="/cappasity">Read more</Link>
               </ReadMore>
-            </Desc>
           </StyledSideBlock>
         </CardContents>
       </HeightContainer>
       <HeightContainer>
         <CardContents>
           <ResponsiveBackgroundImage
-            imageLg={data.section2Image}
-            imageMd={data.section2ImageMd}
+            imageLg={data.section4Image}
+            imageMd={data.section4ImageMd}
             alignLg="center"
-            alignMd="right"
+            alignMd="center"
           />
           <StyledSideBlock>
-            <h3>Radio FX</h3>
-            <SubHeader>
+            <InvertMdHeader>Health App</InvertMdHeader>
+            <InvertedMdSubHeader>
               iOS & Android apps,
               <br />
               Cloud platform, design
-            </SubHeader>
+            </InvertedMdSubHeader>
             <Desc>
-              Delivering the power of social radio to college stations through their very own custom
-              mobile app experience.
-            </Desc>
+              Lose weight for good and increase your wellbeing: Using a smartphone camera, discover
+              the foods that have been holding you back.
+              <br />
+              </Desc>
+              <ReadMore>
+                <Link to="/health">Read more</Link>
+              </ReadMore>
           </StyledSideBlock>
         </CardContents>
       </HeightContainer>
@@ -246,21 +253,21 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
       <HeightContainer>
         <CardContents>
           <ResponsiveBackgroundImage
-            imageLg={data.section4Image}
-            imageMd={data.section4ImageMd}
+            imageLg={data.section2Image}
+            imageMd={data.section2ImageMd}
             alignLg="center"
             alignMd="center"
           />
           <StyledSideBlock>
-            <h3>True Preferences</h3>
+            <h3>Radio FX</h3>
             <SubHeader>
               iOS & Android apps,
               <br />
               Cloud platform, design
             </SubHeader>
             <Desc>
-              Lose weight for good and increase your wellbeing: Using a smartphone camera, discover
-              the foods that have been holding you back.
+              Delivering the power of social radio to college stations through their very own custom
+              mobile app experience.
             </Desc>
           </StyledSideBlock>
         </CardContents>
@@ -353,6 +360,13 @@ export const query = graphql`
       }
     }
   }
+  fragment basicMdIntroImage on File {
+    childImageSharp {
+      fixed(width: 670, height: 500, quality: 85, cropFocus: SOUTH) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
   fragment basicHalfImage on File {
     childImageSharp {
       fixed(width: 640, height: 700, quality: 85) {
@@ -398,10 +412,10 @@ export const query = graphql`
       ...basicMdImage
     }
 
-    section4Image: file(relativePath: { eq: "work_truepref.jpg" }) {
+    section4Image: file(relativePath: { eq: "work_truepref.png" }) {
       ...basicImage
     }
-    section4ImageMd: file(relativePath: { eq: "work_truepref_md.jpg" }) {
+    section4ImageMd: file(relativePath: { eq: "work_truepref_md.png" }) {
       ...basicMdImage
     }
 

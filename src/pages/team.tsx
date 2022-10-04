@@ -150,7 +150,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Vitaly Aminev</h3>
+            <h3>Vitaly</h3>
             <p>CTO / Mad Scientist</p>
           </TeamSideBlock>
         </TeamCard>
@@ -162,7 +162,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Aleksandr Kremenets</h3>
+            <h3>Alex</h3>
             <p>CEO / Mobile Expert</p>
           </TeamSideBlock>
         </TeamCard>
@@ -176,7 +176,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Anna Amineva</h3>
+            <h3>Anna</h3>
             <p>Head of Design</p>
           </TeamSideBlock>
         </TeamCard>
@@ -201,7 +201,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Evgeny Poyarkov</h3>
+            <h3>Eugene</h3>
             <p>Team Master</p>
           </TeamSideBlock>
         </TeamCard>
@@ -213,7 +213,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Aleksandr Bratchikov</h3>
+            <h3>Aleksandr</h3>
             <p>Frontend Hero</p>
           </TeamSideBlock>
         </TeamCard>
@@ -231,7 +231,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Aleksandr Sorokin</h3>
+            <h3>Aleksandr</h3>
             <p>Full-Stack Pro</p>
           </TeamSideBlock>
         </TeamCard>
@@ -250,14 +250,14 @@ const TeamPage: React.FC<TeamPageProps> = ({ data }) => (
             alignMd="center"
           />
           <TeamSideBlock>
-            <h3>Alexey Kubarev</h3>
+            <h3>Alexey</h3>
             <p>Mobile Expert</p>
           </TeamSideBlock>
         </TeamCard>
         <TeamCard>
           <ResponsiveBackgroundImage imageLg={data.ivanovaImage} imageMd={data.ivanovaImageMd} />
           <TeamSideBlock>
-            <h3>Olga Ivanova</h3>
+            <h3>Olga</h3>
             <p>Frontend Creator</p>
           </TeamSideBlock>
         </TeamCard>

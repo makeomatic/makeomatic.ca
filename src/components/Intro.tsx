@@ -10,17 +10,31 @@ const IntroContainer = styled(HeightContainer)`
   padding: ${(p) => p.theme.dimensions.containerPadding}rem;
 
   ${(p) => p.theme.media.md`
+    justify-content: top;
+    flex-direction: row;
     padding: 1rem;
   `};
+`
+
+const ChildContents = styled.div`
+  ${(p) => p.theme.media.md`
+    padding-top: 10rem;
+  `}
 `
 
 const Contents = styled.div`
   max-width: 786px;
 
+  h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+  }
+
   p {
     font-size: 1.75rem;
     line-height: 1.1786;
     letter-spacing: 0.38px;
+    max-width: 36rem;
   }
 
   ${(p) => p.theme.media.md`

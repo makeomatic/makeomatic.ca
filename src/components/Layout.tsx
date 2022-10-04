@@ -15,8 +15,8 @@ if (typeof window !== 'undefined') {
   require('webfontloader').load({
     google: {
       families: [
-        'Rozha One:400:latin',
-        'Assistant:400,600,700:latin',
+        'Nunito Sans:400:latin',
+        'Nunito Sans:400,600,700:latin',
         'Nunito Sans:400,700,800:latin',
         'Merriweather:400:latin',
       ],

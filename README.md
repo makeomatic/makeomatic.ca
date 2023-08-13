@@ -1,13 +1,11 @@
 ## Developing
 
-A nodejs >= 6.0.0 setup with [yarn](https://yarnpkg.com/) is recommended.
-
-``` bash
+```bash
 # install dependencies
-yarn
-
-# ...or, for npm
 npm install
+
+# rebuild sharp gyp files if install process fails
+npm run build:sharp
 
 # serve with hot reload at localhost:3000
 npm start

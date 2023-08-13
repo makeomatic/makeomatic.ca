@@ -11,6 +11,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "build:sharp": "env CXXFLAGS=\"-std=c++17\" npm rebuild --verbose sharp",
     "build": "gatsby build",
     "clean": "rimraf public .cache",
     "deploy": "gatsby build && gh-pages -d public",
@@ -20,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.0.0 <17.0.0"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",

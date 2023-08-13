@@ -150,8 +150,14 @@ const ReadMore = styled.div`
     & a {
       color: #000000;
       font-size: 1.125rem;
-    }  
+    }
   `};
+`
+
+const RadioResponsiveBackgroundImage = styled(ResponsiveBackgroundImage)`
+  @media (max-width: 700px) {
+    margin-left: -7.25rem;
+  }
 `
 
 const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
@@ -181,15 +187,15 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
               Cappasity Cloud platform,
               <br />
               Cappasity Blockchain
-              </InvertedMdSubHeader>
+            </InvertedMdSubHeader>
             <Desc>
               Bring an in-store browsing experience to online retail with Cappasity, the first
               complete 3D product imaging solution for your website, mobile app, VR and AR
               applications.
             </Desc>
             <ReadMore>
-                <Link to="/cappasity">Read more</Link>
-              </ReadMore>
+              <Link to="/cappasity">Read more</Link>
+            </ReadMore>
           </StyledSideBlock>
         </CardContents>
       </HeightContainer>
@@ -212,10 +218,10 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
               Lose weight for good and increase your wellbeing: Using a smartphone camera, discover
               the foods that have been holding you back.
               <br />
-              </Desc>
-              <ReadMore>
-                <Link to="/health">Read more</Link>
-              </ReadMore>
+            </Desc>
+            <ReadMore>
+              <Link to="/health">Read more</Link>
+            </ReadMore>
           </StyledSideBlock>
         </CardContents>
       </HeightContainer>
@@ -252,7 +258,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ data }) => (
       </GeometryDividerContainer>
       <HeightContainer>
         <CardContents>
-          <ResponsiveBackgroundImage
+          <RadioResponsiveBackgroundImage
             imageLg={data.section2Image}
             imageMd={data.section2ImageMd}
             alignLg="center"

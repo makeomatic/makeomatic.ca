@@ -111,7 +111,7 @@ const CallToActionGeometry = styled(CallToAction)`
 
 const StyledHeightContainer = styled(HeightContainer)`
   ${(p) => p.theme.media.md`
-    height: auto;
+    height: auto!important;
   `};
 `
 

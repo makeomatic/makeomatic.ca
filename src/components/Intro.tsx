@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from '../styles/styled-components'
 import { HeightContainer } from './HeightContainer'
 
-const IntroContainer = styled(HeightContainer)`
+export const IntroContainer = styled(HeightContainer)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@ const ChildContents = styled.div`
   `}
 `
 
-const Contents = styled.div`
+export const Contents = styled.div`
   max-width: 786px;
 
   h1 {
@@ -41,7 +41,7 @@ const Contents = styled.div`
     h1 {
       font-size: 2.75rem;
     }
-  
+
     p {
       font-size: 1.375rem;
     }

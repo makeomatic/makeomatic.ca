@@ -111,13 +111,13 @@ const CallToActionGeometry = styled(CallToAction)`
 
 const StyledHeightContainer = styled(HeightContainer)`
   ${(p) => p.theme.media.md`
-    height: auto;
+    height: auto!important;
   `};
 `
 
 const StyledBackgroundImage = styled(ResponsiveBackgroundImage)`
   ${(p) => p.theme.media.md`
-    position: relative;
+    position: relative!important;
     height: ${getEmSize(520)}rem;
     overflow: hidden;
   `};

@@ -3,7 +3,7 @@ import styled from '../styles/styled-components'
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Page } from '../components/Page'
-import { Intro } from '../components/Intro'
+import { Intro, IntroContainer, Contents } from '../components/Intro'
 import { HeightContainer } from '../components/HeightContainer'
 import { CardContents } from '../components/CardContents'
 import { Divider } from '../components/Divider'
@@ -153,37 +153,54 @@ const K8sVideoBlock = styled.div`
     `};
   }
 `
-
 // end teaser blocks
+
+const StyledIntroContainer = styled(IntroContainer)`
+  ${(p) => p.theme.media.md`
+    height: 38rem;
+  `}
+
+  ${(p) => p.theme.media.xs`
+    height: 42rem;
+  `}
+`
+
+const StyledResponsiveBackgroundImage = styled(ResponsiveBackgroundImage)`
+  ${(p) => p.theme.media.md`
+    margin-top: 10rem;
+  `}
+
+  ${(p) => p.theme.media.xs`
+    margin-top: 14rem;
+  `};
+`
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
   <Layout>
     <Page>
-      <Intro
-        header={
-          <span>
-            High Load Services
-          </span>
-        }
-        text="Makeomatic is your long-term 
-        web development and design partner 
-        specializing in creating high-load interactive applications"
-      >
-        <ResponsiveBackgroundImage
+      <StyledIntroContainer>
+        <StyledResponsiveBackgroundImage
           imageLg={data.introImage}
           imageMd={data.introImageMd}
           alignLg="center"
           alignMd="center"
         />
-      </Intro>
+        <Contents>
+          <h1>High Load Service</h1>
+          <p>
+            Makeomatic is your long-term web development and design partner specializing in creating
+            high-load interactive applications
+          </p>
+        </Contents>
+      </StyledIntroContainer>
       <Divider>
         <h2>Enter Innovation Lab</h2>
         <p>
           Whether you have a business plan, sketch or just a few ideas about the product you'd like
           to create, <Link to="/process">we work with you</Link> from that point onwards, all the
-          way through validating your market fit, designing an optimal solution and
-          developing a prototype to be tested and iterated based on the feedback from the
-          users until it becomes a sustainable product
+          way through validating your market fit, designing an optimal solution and developing a
+          prototype to be tested and iterated based on the feedback from the users until it becomes
+          a sustainable product
         </p>
       </Divider>
       <TeaserBlock>
@@ -200,9 +217,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           />
           <TeaserTextBlock>
             <TeaserTitle>Efficient Communication Between Internal Services</TeaserTitle>
-            <TeaserDesc>
-              Leveraging power of messaging broker on massive scale
-            </TeaserDesc>
+            <TeaserDesc>Leveraging power of messaging broker on massive scale</TeaserDesc>
           </TeaserTextBlock>
         </CardContents>
       </TeaserBlock>
@@ -223,7 +238,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
             <TeaserDesc>Automated deployment and scaling</TeaserDesc>
           </K8sTeaserTextBlock>
           <K8sVideoBlock>
-            <video autoPlay playsInline muted loop>
+            <video autoPlay muted playsInline loop>
               <source src={K8sVideo} type="video/mp4"></source>
             </video>
           </K8sVideoBlock>
@@ -243,9 +258,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           />
           <PaymentsTeaserTextBlock>
             <TeaserTitle>Node.JS Performance Benchmarking and Analysis</TeaserTitle>
-            <TeaserDesc>
-              Solving performance problems with great efficiency
-            </TeaserDesc>
+            <TeaserDesc>Solving performance problems with great efficiency</TeaserDesc>
           </PaymentsTeaserTextBlock>
         </CardContents>
       </TeaserBlock>
@@ -264,7 +277,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
           <TeaserTextBlock>
             <TeaserTitle>High Volume Analytical System</TeaserTitle>
             <TeaserDesc>
-              Process more than 100.000 data points per second and run analytical queries in near real time
+              Process more than 100.000 data points per second and run analytical queries in near
+              real time
             </TeaserDesc>
           </TeaserTextBlock>
         </CardContents>

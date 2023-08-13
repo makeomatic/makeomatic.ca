@@ -117,7 +117,7 @@ const StyledHeightContainer = styled(HeightContainer)`
 
 const StyledBackgroundImage = styled(ResponsiveBackgroundImage)`
   ${(p) => p.theme.media.md`
-    position: relative;
+    position: relative!important;
     height: ${getEmSize(520)}rem;
     overflow: hidden;
   `};
